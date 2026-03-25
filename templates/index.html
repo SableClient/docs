@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{%- block content -%}
+		<div class="section-header">
+				<p class="title">{{section.title}}</p>
+		</div>
+		{{ section.content | safe }}
+
+		<hr/>
+		
+		<ul>
+		{%- for p in section.subsections -%}
+				{% set sub = get_section(path=p) %}
+				<li><a href={{sub.path | safe}}>{{sub.title}}</a></li>
+		{% endfor %}
+		</ul>
+		<ul>
+		{%- for page in section.pages -%}
+				<li><a href={{page.path | safe}}>{{page.title}}</a></li>
+		{%- endfor -%}
+		</ul>
+
+{%- endblock content -%}

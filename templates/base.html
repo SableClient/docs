@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="us-en">
+
+		<head>
+				<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				<title>{%- block title -%}{{ config.title }}{%- endblock -%}</title>
+				<link rel="preload" href="{{ get_url(path="fonts/Monofur for Powerline.ttf") }}" as="font" type="font/ttf" crossorigin="anonymous">
+				<link rel="preload" href="{{ get_url(path="fonts/Monofur Italic for Powerline.ttf") }}" as="font" type="font/ttf" crossorigin="anonymous">
+				<link rel="preload" href="{{ get_url(path="fonts/Monofur Bold for Powerline.ttf") }}" as="font" type="font/ttf" crossorigin="anonymous">
+				<link rel="preload" href="{{ get_url(path="fonts/Nunito-VariableFont_wght.ttf") }}" as="font" type="font/ttf" crossorigin="anonymous">
+				<link rel="preload" href="{{ get_url(path="fonts/Nunito-Italic-VariableFont_wght.ttf") }}" as="font" type="font/ttf" crossorigin="anonymous">
+				<link rel="preload" href="{{ get_url(path="img/cinny-logo-48x48.png") }}" as="image" type="image/png" crossorigin="anonymous"> 
+				<link rel="stylesheet" href="{{ get_url(path="main.css", cachebust=true) }}">
+				<meta name="generator" content="Zola">
+
+				{#- TODO: add canonical links, opengraph, etc. -#}
+		</head>
+
+		<body>
+				<main id="main">
+						<nav class="nav">
+								{% filter indent -%}{%- filter indent -%}
+								{%- block nav -%}
+								{% include "partials/nav.html" %}
+								{%- endblock -%}
+								{%- endfilter -%}{%- endfilter %}
+						</nav>
+						<article>
+								{%- block content -%}{%- endblock -%}
+						</article>
+				</main>
+		</body>
+</html>
