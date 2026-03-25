@@ -1,5 +1,6 @@
 # The URL the site will be built for
 base_url = "https://docs.sable.moe"
+title = "Sable Docs"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -8,9 +9,10 @@ compile_sass = true
 build_search_index = true
 
 [markdown]
+github_alerts = true
 
 [markdown.highlighting]
-theme = "catppuccin-mocha"
+theme = "dracula"
 
 [extra]
 # Put all your custom variables here

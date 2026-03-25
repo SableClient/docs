@@ -1,0 +1,331 @@
+@import "variables";
+
+html {
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin:$baseline 0;
+  font-size:$font-size;
+  font-family:$font-family;
+  line-height: $line-height;
+  background:$background;
+  color:$color;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+a {
+  &:link {
+    color:$links;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color:$hover-links;
+  }
+
+  &:visited {
+    color:$visited-links;
+  }
+}
+
+table td, table th {
+  border: 1px solid $color;
+}
+
+pre {
+  margin:$baseline 0;
+  border-radius: 4px;
+  padding:$baseline;
+  overflow: auto;
+  position: relative;
+
+  code {
+  background:transparent;
+
+  &::after {
+    content: attr(data-lang);
+    font-style: italic;
+    line-height: 1;
+    opacity:0.3;
+    position:absolute;
+    bottom:$baseline;
+    right:$baseline;
+    z-index:1;
+  }
+  }
+}
+
+ code {
+    font: $code_font;
+  }
+
+nav {
+  position: sticky;
+  height: 92vh;
+  top:$baseline;
+  left:$baseline;
+  bottom: $baseline;
+  padding-right: $baseline;
+  width: 20rem;
+
+  border-right: 2px dashed $color;
+
+  img {
+    width:128px;
+  }
+
+  h1 {
+    margin:0;
+    line-height: 1;
+    font-size: 2rem;
+  }
+}
+
+#toc {
+  margin-left:calc(#{$baseline} + #{$font-size});
+  padding:0;
+  margin:0 0 0 $baseline;
+  font-size: 80%;
+
+  li {
+    color:$color;
+    margin-left: $font-size;
+
+    &::before {
+      display: inline-block;
+      content:"";
+    }
+
+    ul {
+      padding:0;
+    }
+
+  }
+
+}
+
+#toc-section {
+  margin-left:$baseline;
+  padding:0;
+  margin:0 0 0 $baseline;
+  font-size: 80%;
+
+  li {
+    color:$color;
+    margin-left: $font-size;
+
+    &::before {
+      display: inline-block;
+      content:"";
+    }
+
+    ul {
+      padding:0;
+    }
+
+  }
+
+}
+
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  //animation: fade-in 0.4s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+   max-height:0;
+   opacity:0
+  }
+  100% {
+   max-height:999px;
+   opacity:1
+  }
+}
+ @keyframes slideOut {
+  0% {
+   height:auto;
+   opacity:1
+  }
+  100% {
+   height:0;
+   opacity:0
+  }
+}
+
+nav label {
+  display:block;
+}
+
+.nav-header {
+  display: flex;
+  //justify-content: space-between;
+  gap: 12px;
+  align-items: flex-end;
+
+  img {
+    width: 2rem;
+  }
+}
+
+#trees {
+  overflow-y: auto;
+  height: 80%;
+
+  a {
+    color:$color;
+  }
+ }
+
+ .subtree {
+  overflow:hidden;
+  margin:calc(#{$baseline} / 8) 0;
+  transition: overflow 0.2s ease-in-out;
+  padding: 0;
+ }
+
+  .subtree li {
+  list-style-type: none;
+  margin-left: $baseline;
+
+  a {
+    color:$color;
+  }
+
+  &::before {
+    content: "*";
+    font-family:'Nunito';
+    font-size:0.75rem;
+  }
+
+}
+
+.active a {
+  font-weight: bold;
+}
+
+.nav-footer a {
+    color:$links;
+    text-decoration: none;
+
+    &:hover {
+      color:$hover-links;
+    }
+
+    &:visited {
+      color:$visited-links;
+    }
+}
+
+
+
+article {
+ width: calc(100% - (#{$baseline} * 4 + 20rem));
+ margin-left:calc(#{$baseline} * 2);
+
+ img {
+   max-width:100%;
+ } 
+}
+
+.title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+ }
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#mobile {
+  display: none;
+}
+
+blockquote {
+  border-left: $quote-border;
+  margin: 0;
+  background-color: $quote-bg;
+  padding: 0 20px;
+}
+
+blockquote.markdown-alert-note:before {
+  content: "🔍 Note";
+  font-weight: bold;
+  color: $quote-alert-note-color;
+}
+
+blockquote.markdown-alert-note {
+  border-left-color: $quote-alert-note-color;
+  background-color: $background;
+}
+
+blockquote.markdown-alert-tip:before {
+  content: "💡 Tip";
+  font-weight: bold;
+  color: $quote-alert-tip-color;
+}
+
+blockquote.markdown-alert-tip {
+  border-left-color: $quote-alert-tip-color;
+  background-color: $background;
+}
+
+blockquote.markdown-alert-warning:before {
+  content: "⚠️ Warning";
+  font-weight: bold;
+  color: $quote-alert-warning-color;
+}
+
+blockquote.markdown-alert-warning {
+  border-left-color: $quote-alert-warning-color;
+  background-color: $background;
+}
+
+blockquote.markdown-alert-important:before {
+  content: "📌 Important";
+  font-weight: bold;
+  color: $quote-alert-important-color;
+}
+
+blockquote.markdown-alert-important {
+  border-left-color: $quote-alert-important-color;
+  background-color: $background;
+}
+
+blockquote.markdown-alert-caution:before {
+  content: "☢️ Caution";
+  font-weight: bold;
+  color: $quote-alert-caution-color;
+}
+
+blockquote.markdown-alert-caution {
+  border-left-color: $quote-alert-caution-color;
+  background-color: $background;
+}
