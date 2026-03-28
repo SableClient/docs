@@ -3,6 +3,9 @@ title = "New Features"
 weight = 2
 template = "index.html"
 page_template = "page.html"
+
+[extra]
+hide_page_list = true
 +++
 
 This section covers the features and improvements that have been added to Sable on top of its upstream base.
