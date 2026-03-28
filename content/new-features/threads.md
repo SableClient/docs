@@ -32,5 +32,4 @@ Thread chips on messages show an unread badge when there are new replies you hav
 
 Clicking an inbox notification for a thread reply automatically opens the correct thread drawer in the right room.
 
-> [!NOTE]
-> Threads require your homeserver to support the Matrix threads specification (Synapse 1.75+ or equivalent). On servers without thread support, replies will still be visible in the main timeline as regular replies.
+> **Note:** Threads require your homeserver to support the Matrix threads specification (Synapse 1.75+ or equivalent). On servers without thread support, replies will still be visible in the main timeline as regular replies.

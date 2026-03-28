@@ -30,5 +30,4 @@ Abbreviations defined in a parent space are **automatically inherited** by all c
 
 The abbreviations settings panel shows both locally-defined entries and inherited entries from parent spaces, so you can see the full set of active abbreviations at a glance.
 
-> [!NOTE]
-> Only users with room moderator permissions (power level 50 or higher) can add or remove abbreviations.
+> **Note:** Only users with room moderator permissions (power level 50 or higher) can add or remove abbreviations.
