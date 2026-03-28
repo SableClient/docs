@@ -7,4 +7,5 @@ Sable is a Matrix client built to enhance the user experience with quality-of-li
 
 Sable is a fork of [Cinny](https://github.com/cinnyapp/cinny/).
 
-> **Note:** Sable is in constant development. New features and updates will be published frequently. If you have any questions regarding Sable, please reach out to us in our Matrix chats.
+> [!NOTE]
+> Sable is in constant development. New features & updates will be published frequently. If you have any questions regarding Sable, please reach out to us on our Matrix chats.
