@@ -35,7 +35,8 @@ The debug log viewer shows a live stream of internal application events, useful 
 
 ![Developer Tools debug log panel showing log status, error tracking, and performance metrics](/img/devtools-debug-log.png)
 
-> **Note:** Logs are cleared when a new session starts. They are stored in memory only and are never sent anywhere unless you explicitly export or attach them to a bug report.
+> [!NOTE]
+> Logs are cleared when a new session starts. They are stored in memory only and are never sent anywhere unless you explicitly export or attach them to a bug report.
 
 # Error Tracking (Sentry)
 
