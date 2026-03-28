@@ -7,7 +7,7 @@ Sable includes a number of quality-of-life improvements over its Cinny base.
 
 # Search
 
-Press **Ctrl+F** (or **⌘+F** on macOS) to open Sable's room search. This intercepts the browser's native find-in-page shortcut so you search your Matrix rooms instead of the page source. **Ctrl+K** / **⌘+K** also opens search as before.
+Press <kbd>Ctrl</kbd> + <kbd>F</kbd>(or <kbd>⌘</kbd> + <kbd>F</kbd> on macOS) to open Sable's room search. This intercepts the browser's native find-in-page shortcut so you search your Matrix rooms instead of the page source. <kbd>Ctrl</kbd> + <kbd>K</kbd> / <kbd>⌘</kbd> + <kbd>K</kbd> also opens search as before.
 
 ![Search modal showing room/DM/space results with keyboard shortcut hint](/img/search-modal.png)
 
