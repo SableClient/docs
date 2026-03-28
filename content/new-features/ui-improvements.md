@@ -16,7 +16,7 @@ Press <kbd>Ctrl</kbd> + <kbd>F</kbd>(or <kbd>⌘</kbd> + <kbd>F</kbd> on macOS) 
 The mention and emoji autocomplete menu has been improved:
 
 - The first suggestion is highlighted as soon as the menu opens
-- **Enter** selects the currently highlighted item
+- <kbd>Enter</kbd> selects the currently highlighted item
 - <kbd>↑</kbd> / <kbd>↓</kbd> navigate the list while keeping typing focus in the message editor
 - After completing a mention or emoji, focus returns automatically to the composer
 
