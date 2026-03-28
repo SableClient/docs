@@ -286,6 +286,21 @@ blockquote.markdown-alert-note {
   background-color: $background;
 }
 
+/* Support portable Markdown notes: > **Note:** ... */
+blockquote:has(> p:first-child > strong:first-child) {
+  border-left-color: $quote-alert-note-color;
+  background-color: $background;
+}
+
+blockquote > p:first-child > strong:first-child {
+  color: $quote-alert-note-color;
+  font-weight: bold;
+}
+
+blockquote > p:first-child > strong:first-child::before {
+  content: "🔍 ";
+}
+
 blockquote.markdown-alert-tip:before {
   content: "💡 Tip";
   font-weight: bold;
