@@ -33,7 +33,7 @@ Type `/bugreport` in any room's message composer to open the in-app bug report f
 
 **Settings → General → Diagnostics & Privacy** contains:
 
-- **Crash reporting** toggle (requires re-enabling push if previously on)
+- **Crash reporting** toggle
 - **Session replay** toggle
 - Link to the full privacy policy
 

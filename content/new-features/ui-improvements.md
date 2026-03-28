@@ -29,7 +29,6 @@ Video and audio message volume is persisted across page loads. Set your preferre
 # Media & Calls
 
 - **Calls**: Camera and microphone preferences set in the call settings are respected when starting a call from the room header button, not just from the in-room join screen.
-- **URL previews**: Scroll arrows on URL preview cards only appear when there is actually content to scroll — no more phantom arrows.
 
 # Notifications
 
@@ -52,4 +51,4 @@ A **Cancel** button appears next to "Adding account" in the add-account flow, le
 
 # URL Preview Scroll Arrows
 
-Link preview cards with multiple media items only show left/right scroll arrows when there is actually content to scroll through.
+Link preview cards only show left/right scroll arrows when there is actually content to scroll — no more phantom arrows.
