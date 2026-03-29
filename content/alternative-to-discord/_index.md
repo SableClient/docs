@@ -73,12 +73,12 @@ Only implemented features count below. Features that are still in progress are m
 | KYC safe | Yes | No |
 
 [^e2ee]: Sable supports Matrix end-to-end encryption where the room supports it.
+[^166]: Broader ordering work is tracked in [Order by Activity (#166)](https://github.com/SableClient/Sable/issues/166).
 [^space-lobby-ordering]: Space room ordering is supported from the Space Lobby today. Separate rooms and DMs do not yet have the same sorting controls.
+[^msc2545]: See [MSC2545: Extensible events with custom emotes and stickers](https://github.com/matrix-org/matrix-spec-proposals/pull/2545).
 [^homeserver-files]: Files are hosted by the Matrix homeserver the user chooses.
 [^widgets]: Basic Matrix widget support can cover shared apps, but it is not fully tested yet.
 [^bots]: Matrix bots are regular users rather than a client plugin system. Sable adds bot labeling and exposes room apps/widgets when present.
+[^88]: Native desktop and mobile builds are tracked in [Add desktop and mobile builds (#88)](https://github.com/SableClient/Sable/issues/88).
 [^mobile-pwa]: For now, install the web app as a PWA on your phone.
 [^desktop-builds]: Native desktop builds are still being worked on.
-[^166]: Broader ordering work is tracked in [Order by Activity (#166)](https://github.com/SableClient/Sable/issues/166).
-[^88]: Native desktop and mobile builds are tracked in [Add desktop and mobile builds (#88)](https://github.com/SableClient/Sable/issues/88).
-[^msc2545]: See [MSC2545: Extensible events with custom emotes and stickers](https://github.com/matrix-org/matrix-spec-proposals/pull/2545).
