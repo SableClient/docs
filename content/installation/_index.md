@@ -106,3 +106,72 @@ controls who gets it.
 Bucketing is deterministic and stable: the same user always receives the same variant for
 a given experiment key.  You can see your current variant assignments in
 **Settings → Developer Tools → Features & Experiments**.
+
+## SW session resync configuration
+
+Sable can automatically resync the Matrix session token held by the service worker in the
+background.  This keeps push notifications and background sync working even after long idle
+periods where a browser or OS may have killed the service worker.
+
+Add a `sessionSync` block to `config.json` to configure the behaviour:
+
+```json
+{
+  "sessionSync": {
+    "phase1ForegroundResync": true,
+    "phase2VisibleHeartbeat": false,
+    "phase3AdaptiveBackoffJitter": false,
+    "foregroundDebounceMs": 1500,
+    "heartbeatIntervalMs": 600000,
+    "resumeHeartbeatSuppressMs": 60000,
+    "heartbeatMaxBackoffMs": 1800000
+  }
+}
+```
+
+| Field | Type | Default | Description |
+|---|---|---|---|
+| `phase1ForegroundResync` | boolean | `false` | Push session token to the SW when the app returns to the foreground (debounced) |
+| `phase2VisibleHeartbeat` | boolean | `false` | Periodically push the session token while the app is visible |
+| `phase3AdaptiveBackoffJitter` | boolean | `false` | Back off exponentially with jitter when heartbeat pushes fail |
+| `foregroundDebounceMs` | number | `1500` | Milliseconds to debounce foreground resync events |
+| `heartbeatIntervalMs` | number | `600000` | Milliseconds between heartbeat pushes (default: 10 min) |
+| `resumeHeartbeatSuppressMs` | number | `60000` | Suppress heartbeat for this many ms immediately after a foreground resync |
+| `heartbeatMaxBackoffMs` | number | `1800000` | Maximum backoff interval under phase 3 (default: 30 min) |
+
+Each phase builds on the previous one.  A typical starting deployment enables only
+`phase1ForegroundResync`; phases 2 and 3 add more aggressive keep-alive behaviour
+suitable for users who leave the app open in a background tab.
+
+### Controlled rollout with experiments
+
+To roll out session sync gradually, combine the `sessionSync` block with an
+`experiments.sessionSyncStrategy` entry:
+
+```json
+{
+  "sessionSync": {
+    "phase1ForegroundResync": false,
+    "phase2VisibleHeartbeat": false,
+    "phase3AdaptiveBackoffJitter": false
+  },
+  "experiments": {
+    "sessionSyncStrategy": {
+      "enabled": true,
+      "rolloutPercentage": 20,
+      "controlVariant": "control",
+      "variants": ["session-sync-heartbeat", "session-sync-adaptive"]
+    }
+  }
+}
+```
+
+When this experiment is active, users bucketed into `session-sync-heartbeat` get phases 1
+and 2; users bucketed into `session-sync-adaptive` get all three phases; users outside the
+rollout percentage fall back to the raw `sessionSync` flags.  For a true gradual rollout,
+set the `sessionSync` phase flags to `false` (or omit them) so that only experiment
+participants get session sync.  Set `rolloutPercentage: 0` or `enabled: false` to disable
+the experiment and fall back to the raw `sessionSync` flags for everyone.
+
+See [Feature flag and experiment configuration](#feature-flag-and-experiment-configuration)
+for the full experiments schema.
