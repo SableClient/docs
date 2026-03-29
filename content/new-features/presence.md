@@ -16,5 +16,4 @@ The change takes effect immediately — no need to reconnect or restart the app.
 
 ![Presence Status toggle in Settings](/img/presence-toggle.png)
 
-> [!NOTE]
-> Presence requires sliding sync (MSC4186) to be active. On classic sync, this setting has no effect.
+> **Note:** Presence requires sliding sync (MSC4186) to be active. On classic sync, this setting has no effect.

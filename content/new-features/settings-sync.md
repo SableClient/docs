@@ -26,5 +26,4 @@ The same settings section includes a **JSON export/import** area. You can:
 
 This is useful for self-hosted instances where account data sync may not be available, or to migrate settings to a completely different account.
 
-> [!NOTE]
-> Settings sync is opt-in. If you don't enable it, your settings remain local to each device as before.
+> **Note:** Settings sync is opt-in. If you don't enable it, your settings remain local to each device as before.

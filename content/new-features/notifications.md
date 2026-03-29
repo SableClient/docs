@@ -15,8 +15,7 @@ The service worker fetches the event details directly from your homeserver using
 
 For end-to-end encrypted rooms, the service worker relays the encrypted event to an open Sable tab for decryption. If the app is currently visible, the OS notification is suppressed — you won't get a double alert.
 
-> [!NOTE]
-> On iOS, encrypted message content in push notifications may work depending on the situation. When using a PWA, it will only work while the app is still running in the background — iOS aggressively suspends PWA processes, so if the PWA has been fully killed, encrypted content cannot be decrypted and the notification will show "Encrypted message" as the body. In a native browser (Safari), behaviour depends on whether a background tab is available. This is a platform limitation, not a Sable bug.
+> **Note:** On iOS, encrypted message content in push notifications may work depending on the situation. When using a PWA, it will only work while the app is still running in the background — iOS aggressively suspends PWA processes, so if the PWA has been fully killed, encrypted content cannot be decrypted and the notification will show "Encrypted message" as the body. In a native browser (Safari), behaviour depends on whether a background tab is available. This is a platform limitation, not a Sable bug.
 
 # Notification Avatars
 
