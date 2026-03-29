@@ -18,3 +18,4 @@ This section covers the features and improvements that have been added to Sable 
 - [UI Improvements](ui-improvements) — A collection of quality-of-life improvements across the whole app.
 - [Presence](presence) — Control whether your online/away status is shared with others.
 - [Developer Tools](developer-tools) — Internal debug log viewer and in-app bug report command.
+- [Polls](polls) — Create and vote on polls directly in a room using the MSC3381 standard.
