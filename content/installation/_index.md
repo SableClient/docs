@@ -8,7 +8,7 @@ page_template = "page.html"
 # Getting started
 The web app is available at [app.sable.moe](https://app.sable.moe/) and gets updated on frequently, as soon as a feature is deemed stable.
 
-You can also download our desktop app for windows and linux from [releases](https://github.com/SableClient/Sable/releases/latest).
+Native desktop and mobile builds are still being worked on in [#88](https://github.com/SableClient/Sable/issues/88). For now, use the web app directly, or [install it as a Progressive Web App (PWA) on your phone.](https://www.installpwa.com/from/app.sable.moe)
 
 # Self-hosting
 You have a few options for self hosting, you can:

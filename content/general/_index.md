@@ -7,3 +7,5 @@ page_template = "page.html"
 [extra]
 hide_page_list = true
 +++
+
+This site is a work in progress.

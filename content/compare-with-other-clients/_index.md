@@ -8,10 +8,12 @@ page_template = "page.html"
 hide_page_list = true
 +++
 
+If you're here because you want a direct Discord comparison, start with [Alternative to Discord](/alternative-to-discord/).
+
 |                                                                                     | Sable | Cinny | Commet | Fluffychat |
 |-------------------------------------------------------------------------------------|-------|-------|--------|------------|
-| Personas ([MSC4144](https://github.com/matrix-org/matrix-spec-proposals/pull/4144)) | x     | o     | o      | o          |
-| Profile Bios                                                                        | x     | o     | x      | o          |
-| location sharing                                                                    | x     | o     | o      | x          |
+| Personas ([MSC4144](https://github.com/matrix-org/matrix-spec-proposals/pull/4144)) | No    | Yes   | Yes    | Yes        |
+| Profile Bios                                                                        | No    | Yes   | No     | Yes        |
+| location sharing                                                                    | No    | Yes   | Yes    | No         |
 
 This site is a work in progress.
