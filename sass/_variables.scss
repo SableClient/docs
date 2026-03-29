@@ -22,88 +22,178 @@ $quote-alert-caution-color: var(--sable-crit-main);
 
 :root {
   /* Background */
-  --sable-bg-container: #f7f6f9;
-  --sable-bg-container-hover: #edecf2;
-  --sable-bg-container-active: #e3e2eb;
-  --sable-bg-container-line: #d9d8e4;
-  --sable-bg-on-container: #2d235c;
+  --sable-bg-container: oklch(0.9748 0.0041 301.43);
+  --sable-bg-container-hover: oklch(0.9456 0.0081 293.91);
+  --sable-bg-container-active: oklch(0.9162 0.0122 291.27);
+  --sable-bg-container-line: oklch(0.8866 0.0163 289.9);
+  --sable-bg-on-container: oklch(0.3025 0.0979 287.09);
 
   /* Surface */
-  --sable-surface-container: #ffffff;
-  --sable-surface-container-hover: #f7f6f9;
-  --sable-surface-container-active: #edecf2;
-  --sable-surface-container-line: #e3e2eb;
-  --sable-surface-on-container: #2d235c;
+  --sable-surface-container: oklch(1 0 0);
+  --sable-surface-container-hover: oklch(0.9748 0.0041 301.43);
+  --sable-surface-container-active: oklch(0.9456 0.0081 293.91);
+  --sable-surface-container-line: oklch(0.9162 0.0122 291.27);
+  --sable-surface-on-container: oklch(0.3025 0.0979 287.09);
 
   /* Surface Variant */
-  --sable-surface-var-container: #f0eff4;
-  --sable-surface-var-container-hover: #e6e5ed;
-  --sable-surface-var-container-active: #dcdae6;
-  --sable-surface-var-container-line: #d2d1df;
-  --sable-surface-var-on-container: #514861;
+  --sable-surface-var-container: oklch(0.9543 0.0067 295.45);
+  --sable-surface-var-container-hover: oklch(0.925 0.0108 291.94);
+  --sable-surface-var-container-active: oklch(0.8935 0.0164 293.72);
+  --sable-surface-var-container-line: oklch(0.8657 0.0192 289.28);
+  --sable-surface-var-on-container: oklch(0.4206 0.0423 301.07);
 
   /* Primary */
-  --sable-primary-main: #6e56cf;
-  --sable-primary-main-hover: #644ec1;
-  --sable-primary-main-active: #5b47b3;
-  --sable-primary-main-line: #5240a5;
-  --sable-primary-on-main: #ffffff;
-  --sable-primary-container: #ded9e6;
-  --sable-primary-container-hover: #d3cde0;
-  --sable-primary-container-active: #c8c1d9;
-  --sable-primary-container-line: #bdb6d3;
-  --sable-primary-on-container: #2d235c;
+  --sable-primary-main: oklch(0.5417 0.179 288.03);
+  --sable-primary-main-hover: oklch(0.5094 0.1723 287.44);
+  --sable-primary-main-active: oklch(0.4792 0.1641 287);
+  --sable-primary-main-line: oklch(0.4485 0.1557 286.49);
+  --sable-primary-on-main: oklch(1 0 0);
+  --sable-primary-container: oklch(0.8931 0.0184 303.39);
+  --sable-primary-container-hover: oklch(0.8589 0.0268 300.22);
+  --sable-primary-container-active: oklch(0.8241 0.034 298.97);
+  --sable-primary-container-line: oklch(0.7913 0.0413 296.5);
+  --sable-primary-on-container: oklch(0.3025 0.0979 287.09);
 
   /* Secondary */
-  --sable-sec-main: #514861;
-  --sable-sec-main-hover: #453e54;
-  --sable-sec-main-active: #3b3447;
-  --sable-sec-main-line: #312e3b;
-  --sable-sec-on-main: #ffffff;
-  --sable-sec-container: #eae8f0;
-  --sable-sec-container-hover: #dedce8;
-  --sable-sec-container-active: #d2d0e0;
-  --sable-sec-container-line: #c6c4d8;
-  --sable-sec-on-container: #2d235c;
+  --sable-sec-main: oklch(0.4206 0.0423 301.07);
+  --sable-sec-main-hover: oklch(0.38 0.038 299.17);
+  --sable-sec-main-active: oklch(0.3403 0.034 301.47);
+  --sable-sec-main-line: oklch(0.3098 0.0234 295.58);
+  --sable-sec-on-main: oklch(1 0 0);
+  --sable-sec-container: oklch(0.9348 0.0109 297.62);
+  --sable-sec-container-hover: oklch(0.8996 0.0164 293.73);
+  --sable-sec-container-active: oklch(0.864 0.022 291.68);
+  --sable-sec-container-line: oklch(0.8281 0.0278 290.37);
+  --sable-sec-on-container: oklch(0.3025 0.0979 287.09);
 
   /* Success */
-  --sable-success-main: #017343;
-  --sable-success-main-hover: #01683c;
-  --sable-success-main-active: #016239;
-  --sable-success-main-line: #015c36;
-  --sable-success-on-main: #ffffff;
-  --sable-success-container: #bfdcd0;
-  --sable-success-container-hover: #b3d5c7;
-  --sable-success-container-active: #a6cebd;
-  --sable-success-container-line: #99c7b4;
-  --sable-success-on-container: #01512f;
+  --sable-success-main: oklch(0.4887 0.1175 156.33);
+  --sable-success-main-hover: oklch(0.4551 0.1094 156.27);
+  --sable-success-main-active: oklch(0.4367 0.1042 156.68);
+  --sable-success-main-line: oklch(0.418 0.0988 157.14);
+  --sable-success-on-main: oklch(1 0 0);
+  --sable-success-container: oklch(0.8698 0.0349 168.65);
+  --sable-success-container-hover: oklch(0.8443 0.041 168.49);
+  --sable-success-container-active: oklch(0.8178 0.0486 167.41);
+  --sable-success-container-line: oklch(0.7915 0.0555 167.7);
+  --sable-success-on-container: oklch(0.383 0.0904 157.16);
 
   /* Warning */
-  --sable-warn-main: #864300;
-  --sable-warn-main-hover: #793c00;
-  --sable-warn-main-active: #723900;
-  --sable-warn-main-line: #6b3600;
-  --sable-warn-on-main: #ffffff;
-  --sable-warn-container: #e1d0bf;
-  --sable-warn-container-hover: #dbc7b2;
-  --sable-warn-container-active: #d5bda6;
-  --sable-warn-container-line: #cfb499;
-  --sable-warn-on-container: #5e2f00;
+  --sable-warn-main: oklch(0.4588 0.1133 55.23);
+  --sable-warn-main-hover: oklch(0.4265 0.1052 55.33);
+  --sable-warn-main-active: oklch(0.4102 0.1003 56.11);
+  --sable-warn-main-line: oklch(0.3938 0.0953 56.99);
+  --sable-warn-on-main: oklch(1 0 0);
+  --sable-warn-container: oklch(0.8669 0.0299 67.42);
+  --sable-warn-container-hover: oklch(0.8407 0.0364 68.67);
+  --sable-warn-container-active: oklch(0.8126 0.0417 65.98);
+  --sable-warn-container-line: oklch(0.7862 0.0483 67.03);
+  --sable-warn-on-container: oklch(0.3601 0.0868 57.34);
 
   /* Critical */
-  --sable-crit-main: #9d0f0f;
-  --sable-crit-main-hover: #8d0e0e;
-  --sable-crit-main-active: #850d0d;
-  --sable-crit-main-line: #7e0c0c;
-  --sable-crit-on-main: #ffffff;
-  --sable-crit-container: #e7c3c3;
-  --sable-crit-container-hover: #e2b7b7;
-  --sable-crit-container-active: #ddabab;
-  --sable-crit-container-line: #d89f9f;
-  --sable-crit-on-container: #6e0b0b;
+  --sable-crit-main: oklch(0.4434 0.1729 28.16);
+  --sable-crit-main-hover: oklch(0.4109 0.1589 28);
+  --sable-crit-main-active: oklch(0.3941 0.1521 27.96);
+  --sable-crit-main-line: oklch(0.3792 0.1461 27.93);
+  --sable-crit-on-main: oklch(1 0 0);
+  --sable-crit-container: oklch(0.8481 0.0411 17.99);
+  --sable-crit-container-hover: oklch(0.8175 0.0498 18.22);
+  --sable-crit-container-active: oklch(0.7869 0.0589 18.48);
+  --sable-crit-container-line: oklch(0.7564 0.0682 18.78);
+  --sable-crit-on-container: oklch(0.3454 0.1313 27.67);
 
   /* Other */
   --sable-focus-ring: rgba(110, 86, 207, 0.4);
   --sable-shadow: rgba(45, 35, 92, 0.1);
   --sable-overlay: rgba(45, 35, 92, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Background */
+    --sable-bg-container: oklch(0.18 0.015 292);
+    --sable-bg-container-hover: oklch(0.22 0.017 292);
+    --sable-bg-container-active: oklch(0.26 0.019 292);
+    --sable-bg-container-line: oklch(0.34 0.021 292);
+    --sable-bg-on-container: oklch(0.92 0.02 300);
+
+    /* Surface */
+    --sable-surface-container: oklch(0.21 0.015 292);
+    --sable-surface-container-hover: oklch(0.25 0.017 292);
+    --sable-surface-container-active: oklch(0.29 0.019 292);
+    --sable-surface-container-line: oklch(0.37 0.021 292);
+    --sable-surface-on-container: oklch(0.92 0.02 300);
+
+    /* Surface Variant */
+    --sable-surface-var-container: oklch(0.27 0.02 294);
+    --sable-surface-var-container-hover: oklch(0.31 0.022 294);
+    --sable-surface-var-container-active: oklch(0.35 0.024 294);
+    --sable-surface-var-container-line: oklch(0.43 0.026 294);
+    --sable-surface-var-on-container: oklch(0.88 0.018 298);
+
+    /* Primary */
+    --sable-primary-main: oklch(0.66 0.17 288);
+    --sable-primary-main-hover: oklch(0.71 0.18 288);
+    --sable-primary-main-active: oklch(0.61 0.16 288);
+    --sable-primary-main-line: oklch(0.55 0.14 288);
+    --sable-primary-on-main: oklch(0.18 0.015 292);
+    --sable-primary-container: oklch(0.31 0.06 288);
+    --sable-primary-container-hover: oklch(0.36 0.07 288);
+    --sable-primary-container-active: oklch(0.41 0.08 288);
+    --sable-primary-container-line: oklch(0.5 0.09 288);
+    --sable-primary-on-container: oklch(0.92 0.02 300);
+
+    /* Secondary */
+    --sable-sec-main: oklch(0.74 0.035 300);
+    --sable-sec-main-hover: oklch(0.79 0.04 300);
+    --sable-sec-main-active: oklch(0.69 0.03 300);
+    --sable-sec-main-line: oklch(0.61 0.025 300);
+    --sable-sec-on-main: oklch(0.18 0.015 292);
+    --sable-sec-container: oklch(0.3 0.025 300);
+    --sable-sec-container-hover: oklch(0.35 0.03 300);
+    --sable-sec-container-active: oklch(0.4 0.035 300);
+    --sable-sec-container-line: oklch(0.48 0.04 300);
+    --sable-sec-on-container: oklch(0.92 0.02 300);
+
+    /* Success */
+    --sable-success-main: oklch(0.72 0.14 160);
+    --sable-success-main-hover: oklch(0.77 0.15 160);
+    --sable-success-main-active: oklch(0.67 0.13 160);
+    --sable-success-main-line: oklch(0.6 0.11 160);
+    --sable-success-on-main: oklch(0.18 0.015 292);
+    --sable-success-container: oklch(0.3 0.05 160);
+    --sable-success-container-hover: oklch(0.35 0.055 160);
+    --sable-success-container-active: oklch(0.4 0.06 160);
+    --sable-success-container-line: oklch(0.48 0.065 160);
+    --sable-success-on-container: oklch(0.91 0.02 170);
+
+    /* Warning */
+    --sable-warn-main: oklch(0.75 0.13 70);
+    --sable-warn-main-hover: oklch(0.8 0.14 70);
+    --sable-warn-main-active: oklch(0.7 0.12 70);
+    --sable-warn-main-line: oklch(0.63 0.11 68);
+    --sable-warn-on-main: oklch(0.18 0.015 292);
+    --sable-warn-container: oklch(0.32 0.045 70);
+    --sable-warn-container-hover: oklch(0.37 0.05 70);
+    --sable-warn-container-active: oklch(0.42 0.055 70);
+    --sable-warn-container-line: oklch(0.5 0.06 70);
+    --sable-warn-on-container: oklch(0.93 0.02 85);
+
+    /* Critical */
+    --sable-crit-main: oklch(0.7 0.16 28);
+    --sable-crit-main-hover: oklch(0.75 0.17 28);
+    --sable-crit-main-active: oklch(0.65 0.15 28);
+    --sable-crit-main-line: oklch(0.58 0.13 28);
+    --sable-crit-on-main: oklch(0.18 0.015 292);
+    --sable-crit-container: oklch(0.31 0.055 28);
+    --sable-crit-container-hover: oklch(0.36 0.06 28);
+    --sable-crit-container-active: oklch(0.41 0.065 28);
+    --sable-crit-container-line: oklch(0.49 0.07 28);
+    --sable-crit-on-container: oklch(0.92 0.02 25);
+
+    /* Other */
+    --sable-focus-ring: rgba(110, 86, 207, 0.4);
+    --sable-shadow: rgba(45, 35, 92, 0.1);
+    --sable-overlay: rgba(45, 35, 92, 0.4);
+  }
 }

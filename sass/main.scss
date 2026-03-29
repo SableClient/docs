@@ -46,6 +46,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
   scrollbar-gutter: stable both-edges;
+  background: var(--sable-bg-container);
+  color-scheme: light dark;
 }
 
 body {
@@ -60,6 +62,10 @@ body {
 
 @view-transition {
   navigation: auto;
+}
+
+::view-transition {
+  background: var(--sable-bg-container);
 }
 
 a {
