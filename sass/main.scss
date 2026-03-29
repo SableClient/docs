@@ -125,24 +125,35 @@ pre {
   margin: $baseline 0;
   border-radius: 0.9rem;
   padding: $baseline;
-  overflow: auto;
+  overflow: hidden;
   position: relative;
   background: var(--sable-surface-var-container);
   box-shadow: inset 0 0 0 1px var(--sable-surface-var-container-line);
 
-  code {
-    background: transparent;
+  &[data-lang]::after {
+    content: attr(data-lang);
+    padding: 0.2rem 0.45rem;
+    font-style: italic;
+    line-height: 1;
+    opacity: 0.3;
+    position: absolute;
+    bottom: $baseline;
+    right: $baseline;
+    z-index: 1;
+    pointer-events: none;
+  }
 
-    &::after {
-      content: attr(data-lang);
-      font-style: italic;
-      line-height: 1;
-      opacity: 0.3;
-      position: absolute;
-      bottom: $baseline;
-      right: $baseline;
-      z-index: 1;
-    }
+  &[data-lang] code {
+    padding-right: 4.5rem;
+    padding-bottom: 1.25rem;
+    box-sizing: border-box;
+  }
+
+  code {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: transparent;
   }
 }
 
@@ -701,6 +712,11 @@ h6 {
 
   pre {
     padding: 1rem;
+
+    &[data-lang]::after {
+      bottom: 1rem;
+      right: 1rem;
+    }
   }
 }
 

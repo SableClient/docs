@@ -1,3 +1,14 @@
+const initCodeBlockLabels = () => {
+	document.querySelectorAll('pre > code[data-lang]').forEach((codeBlock) => {
+		const pre = codeBlock.parentElement;
+		const language = codeBlock.getAttribute('data-lang');
+
+		if (!pre || !language) return;
+
+		pre.setAttribute('data-lang', language);
+	});
+};
+
 const initDocsNav = () => {
 	const button = document.querySelector('.nav-toggle-button');
 	const nav = document.getElementById('docs-nav');
@@ -56,7 +67,15 @@ const initDocsNav = () => {
 };
 
 if (document.readyState === 'loading') {
-	document.addEventListener('DOMContentLoaded', initDocsNav, { once: true });
+	document.addEventListener(
+		'DOMContentLoaded',
+		() => {
+			initCodeBlockLabels();
+			initDocsNav();
+		},
+		{ once: true },
+	);
 } else {
+	initCodeBlockLabels();
 	initDocsNav();
 }
