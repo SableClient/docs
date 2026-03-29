@@ -1,16 +1,11 @@
 <!doctype html>
-<html lang="us-en">
+<html lang="en">
 
 		<head>
 				<meta charset="utf-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<title>{%- block title -%}{{ config.title }}{%- endblock -%}</title>
-				<link rel="preload" href="{{ get_url(path="fonts/Monofur for Powerline.ttf") }}" as="font" type="font/ttf" crossorigin="anonymous">
-				<link rel="preload" href="{{ get_url(path="fonts/Monofur Italic for Powerline.ttf") }}" as="font" type="font/ttf" crossorigin="anonymous">
-				<link rel="preload" href="{{ get_url(path="fonts/Monofur Bold for Powerline.ttf") }}" as="font" type="font/ttf" crossorigin="anonymous">
-				<link rel="preload" href="{{ get_url(path="fonts/Nunito-VariableFont_wght.ttf") }}" as="font" type="font/ttf" crossorigin="anonymous">
-				<link rel="preload" href="{{ get_url(path="fonts/Nunito-Italic-VariableFont_wght.ttf") }}" as="font" type="font/ttf" crossorigin="anonymous">
-				<link rel="preload" href="{{ get_url(path="img/cinny-logo-48x48.png") }}" as="image" type="image/png" crossorigin="anonymous"> 
+				<script type="module" src="{{ get_url(path="js/site.js") }}"></script>
 				<link rel="stylesheet" href="{{ get_url(path="main.css", cachebust=true) }}">
 				<meta name="generator" content="Zola">
 
@@ -18,15 +13,25 @@
 		</head>
 
 		<body>
+				<a class="skip-link" href="#content">Skip to content</a>
+				<button class="nav-toggle-button" type="button" aria-expanded="false" aria-controls="docs-nav" aria-label="Browse docs">
+						<span class="nav-toggle-icon" aria-hidden="true">
+								<span></span>
+								<span></span>
+								<span></span>
+						</span>
+						<span class="sr-only">Browse docs</span>
+				</button>
+				<div class="nav-overlay" hidden></div>
 				<main id="main">
-						<nav class="nav">
+						<nav class="nav" id="docs-nav" aria-label="Documentation">
 								{% filter indent -%}{%- filter indent -%}
 								{%- block nav -%}
 								{% include "partials/nav.html" %}
 								{%- endblock -%}
 								{%- endfilter -%}{%- endfilter %}
 						</nav>
-						<article>
+						<article id="content" tabindex="-1">
 								{%- block content -%}{%- endblock -%}
 						</article>
 				</main>

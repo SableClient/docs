@@ -1,23 +1,26 @@
 <div class="nav-header">
-		<img src="{{ get_url(path="img/cinny-logo-48x48.png") }}" /> 
-		<h1>{{config.title}}</h1>
+		<a class="nav-header-home" href="/">
+				<img src="{{ get_url(path="img/cinny-logo-48x48.png") }}" alt="Sable logo" />
+				<h1>{{config.title}}</h1>
+		</a>
+		<button class="nav-close-button" type="button" aria-label="Close docs navigation">×</button>
 </div>
 
 <hr/>
 
 <div id="trees">
 		<div {% if current_path == "/" %}class="active"{% endif %}>
-				<a href="/">Start</a>
+				<a href="/" {% if current_path == "/" %}aria-current="page"{% endif %}>Introduction</a>
         </div>
 
-		<ul class="subtree"/>
+		<ul class="subtree"></ul>
 
         {% set section_ = get_section(path="_index.md") -%}
         {% for p in section_.subsections -%}
                 {% set subsection = get_section(path=p) -%}
 
 				<div {% if current_path == subsection.path %}class="active"{% endif %}>
-						<a href={{subsection.path}}>{{subsection.title}}</a>
+						<a href="{{ subsection.path }}" {% if current_path == subsection.path %}aria-current="page"{% endif %}>{{subsection.title}}</a>
 				</div>
 
 				<ul class="subtree">
@@ -70,7 +73,7 @@
 
                         {% for page in subsection.pages -%}
                             <li {% if current_path == page.path %}class="active"{% endif %}>
-                                <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+                                <a href="{{ page.permalink | safe }}" {% if current_path == page.path %}aria-current="page"{% endif %}>{{ page.title }}</a>
                             </li>
 
                             {% if page.toc -%}
@@ -132,4 +135,3 @@
 		<a href="https://github.com/SableClient/Sable">Source</a>
 		<p>Content licenced under <a href="https://creativecommons.org/licenses/by/4.0/deed.en">CC-BY-4.0</a>.</p>
 </div>
-
