@@ -52,3 +52,21 @@ See [Privacy & Crash Reporting](../privacy) for information on enabling or disab
 # In-App Bug Report
 
 Type `/bugreport` in any room's compose box to open the bug report form. This prefills a GitHub issue template with your description and optionally attaches your recent debug log export.
+
+# Features & Experiments
+
+The **Features & Experiments** panel (Settings → Developer Tools → Features & Experiments) shows
+the feature flags and A/B experiments defined in your deployment's `config.json`.
+
+For each configured experiment you can see:
+
+- **Enabled** — whether the experiment is active for any users
+- **Rollout** — the percentage of users enrolled
+- **Your Variant** — the variant you have been assigned, and whether you are in the
+  experiment group or the control group
+
+This is useful for verifying that a flag was deployed correctly, or for confirming which arm
+of an experiment you are currently in.  Variant assignment is deterministic: the same account
+always receives the same variant for a given experiment key, across devices and sessions.
+
+See [Installation → Feature flag and experiment configuration](../installation/#feature-flag-and-experiment-configuration) for how operators define experiments.
