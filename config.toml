@@ -8,11 +8,19 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+
 [markdown]
 github_alerts = true
+external_links_target_blank = true
 
 [markdown.highlighting]
 theme = "dracula"
 
 [extra]
-# Put all your custom variables here
+meta_author = "Sable contributors"
+meta_description = "Documentation for Sable, the open source Matrix client with a clean, secure, customizable interface."
+meta_keywords = "sable docs, sable client, matrix, matrix client, matrix.org, e2ee, documentation"
+meta_theme_color_light = "#f7f6f9"
+meta_theme_color_dark = "#1b1a21"
+meta_image = "favicon.png"
+meta_image_alt = "Sable logo"

@@ -1,16 +1,56 @@
 <!doctype html>
 <html lang="en">
+		{% set meta_title = config.title %}
+		{% set meta_name = config.title %}
+		{% set meta_description = config.extra.meta_description %}
+		{% set meta_url = config.base_url ~ "/" %}
+		{% set meta_type = "website" %}
+		{% set meta_image = get_url(path=config.extra.meta_image) %}
+		{% if current_path != "/" %}
+				{% if page is defined %}
+						{% set meta_title = page.title ~ " | " ~ config.title %}
+						{% set meta_name = page.title %}
+						{% set meta_description = page.description | default(value=page.title ~ " docs for Sable, the open source Matrix client.") %}
+						{% set meta_url = page.permalink %}
+						{% set meta_type = "article" %}
+				{% elif section is defined %}
+						{% set meta_title = section.title ~ " | " ~ config.title %}
+						{% set meta_name = section.title %}
+						{% set meta_description = section.description | default(value=section.title ~ " docs for Sable, the open source Matrix client.") %}
+						{% set meta_url = section.permalink %}
+				{% endif %}
+		{% endif %}
 
 		<head>
 				<meta charset="utf-8">
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
-				<title>{%- block title -%}{{ config.title }}{%- endblock -%}</title>
+				<title>{{ meta_title }}</title>
+				<meta name="name" content="{{ meta_name }}">
+				<meta name="author" content="{{ config.extra.meta_author }}">
+				<meta name="description" content="{{ meta_description }}">
+				<meta name="keywords" content="{{ config.extra.meta_keywords }}">
+				<meta name="color-scheme" content="light dark">
+				<meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ config.extra.meta_theme_color_light }}" />
+    		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ config.extra.meta_theme_color_dark }}" />
+				<meta property="og:site_name" content="{{ config.title }}">
+				<meta property="og:type" content="{{ meta_type }}">
+				<meta property="og:title" content="{{ meta_title }}">
+				<meta property="og:url" content="{{ meta_url }}">
+				<meta property="og:image" content="{{ meta_image }}">
+				<meta property="og:image:alt" content="{{ config.extra.meta_image_alt }}">
+				<meta property="og:description" content="{{ meta_description }}">
+				<meta name="twitter:card" content="summary">
+				<meta name="twitter:title" content="{{ meta_title }}">
+				<meta name="twitter:description" content="{{ meta_description }}">
+				<meta name="twitter:image" content="{{ meta_image }}">
+				<link rel="canonical" href="{{ meta_url }}">
+				<link rel="icon" href="{{ meta_image }}">
+				<link rel="shortcut icon" href="{{ meta_image }}">
 				<script>document.documentElement.classList.add('js');</script>
 				<script type="module" blocking="render" src="{{ get_url(path="js/site.js") }}"></script>
 				<link rel="stylesheet" href="{{ get_url(path="main.css", cachebust=true) }}">
 				<meta name="generator" content="Zola">
-
-				{#- TODO: add canonical links, opengraph, etc. -#}
 		</head>
 
 		<body>
