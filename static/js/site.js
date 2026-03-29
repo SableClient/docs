@@ -1,5 +1,3 @@
-document.documentElement.classList.add('js');
-
 const initDocsNav = () => {
 	const button = document.querySelector('.nav-toggle-button');
 	const nav = document.getElementById('docs-nav');

@@ -5,7 +5,8 @@
 				<meta charset="utf-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<title>{%- block title -%}{{ config.title }}{%- endblock -%}</title>
-				<script type="module" src="{{ get_url(path="js/site.js") }}"></script>
+				<script>document.documentElement.classList.add('js');</script>
+				<script type="module" blocking="render" src="{{ get_url(path="js/site.js") }}"></script>
 				<link rel="stylesheet" href="{{ get_url(path="main.css", cachebust=true) }}">
 				<meta name="generator" content="Zola">
 
