@@ -17,24 +17,24 @@
 }
 
 @font-face {
-  font-family: "Monofur for Powerline";
-  src: url("fonts/Monofur for Powerline.ttf") format("truetype");
+  font-family: "Space Mono";
+  src: url("fonts/SpaceMono-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: optional;
 }
 
 @font-face {
-  font-family: "Monofur for Powerline";
-  src: url("fonts/Monofur Italic for Powerline.ttf") format("truetype");
+  font-family: "Space Mono";
+  src: url("fonts/SpaceMono-Italic.ttf") format("truetype");
   font-style: italic;
   font-weight: 400;
   font-display: optional;
 }
 
 @font-face {
-  font-family: "Monofur for Powerline";
-  src: url("fonts/Monofur Bold for Powerline.ttf") format("truetype");
+  font-family: "Space Mono";
+  src: url("fonts/SpaceMono-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
   font-display: optional;
@@ -164,7 +164,7 @@ code,
 tt,
 kbd,
 samp {
-  font-family: "Monofur for Powerline", SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace !important;
+  font-family: "Space Mono", SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace !important;
 }
 
 code,
