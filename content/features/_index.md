@@ -1,5 +1,5 @@
 +++
-title = "New Features"
+title = "Feature Guides"
 weight = 4
 template = "index.html"
 page_template = "page.html"
