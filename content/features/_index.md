@@ -18,3 +18,4 @@ This section covers the features and improvements that have been added to Sable 
 - [UI Improvements](ui-improvements) — A collection of quality-of-life improvements across the whole app.
 - [Presence](presence) — Control whether your online/away status is shared with others.
 - [Developer Tools](developer-tools) — Internal debug log viewer and in-app bug report command.
+- [Message Bookmarks](bookmarks) — Save messages for later and access them from the bookmarks sidebar page, synced across devices. *(Experimental — MSC4438)*
