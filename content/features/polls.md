@@ -17,6 +17,7 @@ Fill in:
 
 - **Question** — what you want to ask (up to 340 characters)
 - **Options** — at least 2 and at most 20 answer choices (each up to 340 characters); blank options are ignored when sent
+- **Max selections** — how many options each voter may choose (default: 1; cannot exceed the number of options)
 - **Results visibility** — *Show live results* (disclosed, results visible while voting) or *Hide until closed* (undisclosed, results hidden until the poll ends)
 - **Voter visibility** — choose whether voter names are shown next to each answer in the results
 - **Poll duration** — optionally set an expiry time (1 hour, 12 hours, 24 hours, 48 hours, 1 week, or a custom date and time); the poll automatically closes when the time is reached
@@ -25,7 +26,11 @@ Click **Create Poll** to post it to the room.
 
 # Voting
 
-Click an answer button to cast your vote. In a *disclosed* poll you can see the current vote counts and percentages update immediately. Click a selected option again to remove your vote; in a single-choice poll selecting a different option automatically moves your vote.
+Click an answer button to cast your vote. In a *disclosed* poll, vote counts and percentages update immediately.
+
+For **single-choice** polls, clicking a different option moves your vote; clicking your current selection removes it.
+
+For **multi-selection** polls, you can pick up to the stated maximum. Click a selected option again to deselect it. Once you've reached the maximum, you must deselect an option before you can choose another.
 
 # Ending a Poll
 
