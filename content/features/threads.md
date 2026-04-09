@@ -16,13 +16,15 @@ Click any **thread chip** (the reply count shown below a threaded message) to op
 
 The original message (thread root) is shown at the top of the drawer. Long root messages have a scrollable preview capped at 200px so replies are always reachable.
 
+Older replies load automatically as you scroll up in the thread drawer.
+
 # Thread Browser
 
 Click the **Threads** button in the room header to open the thread browser. This lists all threads in the current room with a preview of the latest reply and an unread badge if you have unread replies.
 
 Click a thread preview to open it in the drawer. Use the **Jump** button on a thread preview to jump directly to the thread root in the main timeline.
 
-Use the **Load more** button at the bottom of the thread browser to fetch threads that are older than what is currently loaded locally.
+Older threads load automatically as you scroll down in the thread browser.
 
 # Unread Badges
 
