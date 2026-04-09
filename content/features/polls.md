@@ -11,16 +11,17 @@ Sable supports Matrix polls ([MSC3381](https://github.com/matrix-org/matrix-spec
 
 # Creating a Poll
 
-Click the **poll icon** (bar chart) in the message compose bar to open the poll creator. Fill in:
+Type `/poll` in any room's message box and press Enter (or select the suggestion from the command list). The **Create Poll** dialog will open.
+
+Fill in:
 
 - **Question** — what you want to ask (up to 340 characters)
-- **Options** — at least 2 and at most 20 answer choices (each up to 340 characters)
-- **Type** — *Disclosed* (results visible while voting) or *Undisclosed* (results hidden until the poll is ended)
-- **Max selections** — how many options each voter may choose (default: 1)
+- **Options** — at least 2 and at most 20 answer choices (each up to 340 characters); blank options are ignored when sent
+- **Results visibility** — *Show live results* (disclosed, results visible while voting) or *Hide until closed* (undisclosed, results hidden until the poll ends)
 - **Voter visibility** — choose whether voter names are shown next to each answer in the results
 - **Poll duration** — optionally set an expiry time (1 hour, 12 hours, 24 hours, 48 hours, 1 week, or a custom date and time); the poll automatically closes when the time is reached
 
-Click **Send Poll** to post it to the room.
+Click **Create Poll** to post it to the room.
 
 # Voting
 
