@@ -5,6 +5,16 @@ weight = 1
 
 ## General Commands
 
+### /poll
+
+Create a poll in the current room
+
+Usage: `/poll`
+
+Opens the **Create Poll** dialog where you can enter a question, answer options, visibility settings, and an optional expiry time.
+
+> Polls must be enabled in `config.json` (`"features": { "polls": true }`).
+
 ### /me
 
 Describing what you're doing
