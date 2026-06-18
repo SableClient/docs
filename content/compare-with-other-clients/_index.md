@@ -14,6 +14,6 @@ If you're here because you want a direct Discord comparison, start with [Alterna
 |-------------------------------------------------------------------------------------|-------|-------|--------|------------|
 | Personas ([MSC4144](https://github.com/matrix-org/matrix-spec-proposals/pull/4144)) | Yes   | No    | No     | No         |
 | Profile Bios                                                                        | Yes   | No    | Yes    | No         |
-| location sharing                                                                    | Yes   | No    | No     | Yes        |
+| Location sharing                                                                    | Yes   | No    | No     | Yes        |
 
 This site is a work in progress.
