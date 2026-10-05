@@ -23,17 +23,31 @@ one, single provider, we have multiple! And thanks to the underlying
 tech, we can all talk to one another regardless of the provider you
 choose.
 
-It's also an *open network*, where the entire text and technical
+Think of it a little bit like cities. Everyone has a city they call 
+their home, but not everyone lives in the same city, under the same 
+government or even the same country. Yet, we have divised clever 
+systems that let us send letters to *anyone in the world*. This is 
+exactly what Matrix lets us do, but for instant messaging.
+
+It's an *open network*, where the entire text and technical
 information on how it works is publicly accessible, and a
-collaborative effort. Anyone can create a chat-app using it and is 
+collaborative effort. Everyone is allowed to improve on it for 
+everyone.
+
+Anyone can create a chat-app using it and is 
 encouraged to share their efforts, so that others can also implement
-eachother's features.
+eachother's features. Using it, everyone can start their own little 
+"city" to provide a home for themselves and friends.
 
 Sable is but one player in the wider ecosystem, there is [many
 more](https://matrix.org/ecosystem/clients) out there, including
 [server-software](https://matrix.org/ecosystem/servers) for those of
-us that wan't to become their own provider (or provide just for
-themselves!).
+us that wan't to become their own provider ("city").
+
+One more thing to note, if the link above wasn't clear, there is 
+multiple apps you can install and use! Pick the one you like most, 
+but judging from the site you're on, you probably came here for 
+Sable.
 
 But enough with the sales pitch, let's get to actually hopping on 
 Matrix.
@@ -47,7 +61,7 @@ You can leave options at their default and just hit `Continue with
 Matrix.org` and create an account. Though, it should be stated that
 further down in this guide, we list some reasons as to why you might
 wanna consider spending a *little* extra time picking out another
-provider.
+provider (or "city").
 
 Regardless, you can continue and register, and when you're done you'll
 be at an empty screen that looks and feels a bit like Discord!
@@ -63,22 +77,32 @@ From here you can:
 
 - Spaces: A collection of rooms! This can either be for private use,
   or for public communities. They have separate permissions from the
-  rooms inside
+  rooms inside, and act a little bit like Discord Servers or 
+  Slack Workspaces.
 - Direct Message: Anything that appears in the Direct Messages tab,
-  usually one-on-one discussions
+  usually one-on-one discussions.
 - Alias or Address: The human-readable address to a room or space,
-  usually something like this: `#example:matrix.org`
+  usually something like this: `#example:matrix.org`.
 - Invite: manually inviting a specific user to a room or DM using the
-  UI; Links to rooms/spaces are *not* called invites by most people
+  UI; Links to rooms/spaces are *not* called invites by most people.
 - MXID: Short for "Matrix ID", it's your unique username+provider
-  combo, like `@bob:matrix.org`
+  combo, like `@bob:matrix.org`.
+
+### Joining a community
+
+If you're looking for a community to join, there is places like the 
+[Sable Community Space](https://matrix.to/#/%23sable%3Asable.moe) and 
+there is many more out there! A good place to start outside of the 
+Sable space is the "Explore" or "Discover" section in the sidebar. It'll 
+list up rooms and spaces on your server ("city") that people chose 
+to publish.
 
 ### Why you should consider signing up somewhere other than Matrix.org
 
 Matrix is decentralized, as previously discussed, and this gives it
-one major strength: There's no one company or anything else that can
+one major strength: **There's no one company or anything else that can
 dictate the rules, whether or not your account gets banned, or whether
-you can keep talking to your friends.
+you can keep talking to your friends.**
 
 Though, by principle, this becomes less and less relevant if everyone
 is using the same provider. That freedom is lost, because it means a
@@ -96,4 +120,5 @@ and data about how long they've been operating at
 <https://servers.joinmatrix.org>
 
 > [!WARNING]
-> Do note: This page is *not* maintained by the Matrix.org Foundation.
+> Do note: This page is *not* maintained by the Matrix.org 
+> Foundation, neither is it maintained by us.
