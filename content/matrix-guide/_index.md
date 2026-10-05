@@ -42,7 +42,7 @@ eachother's features. Using it, everyone can start their own little
 Sable is but one player in the wider ecosystem, there is [many
 more](https://matrix.org/ecosystem/clients) out there, including
 [server-software](https://matrix.org/ecosystem/servers) for those of
-us that wan't to become their own provider ("city").
+us that want to become their own provider ("city").
 
 One more thing to note, if the link above wasn't clear, there is 
 multiple apps you can install and use! Pick the one you like most, 
