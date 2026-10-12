@@ -8,9 +8,12 @@ page_template = "page.html"
 # Getting started
 The web app is available at [app.sable.moe](https://app.sable.moe/) and gets updated on frequently, as soon as a feature is deemed stable.
 
-Native desktop and mobile builds are still being worked on in [#88](https://github.com/SableClient/Sable/issues/88). For now, use the web app directly, or [install it as a Progressive Web App (PWA) on your phone.](https://www.installpwa.com/from/app.sable.moe)
+The latest changes on the `main` branch are available at <https://dev.sable.moe>
 
-# Self-hosting
+Native desktop and mobile apps are available [on GitHub](https://github.com/SableClient/Sable/releases)
+
+# Self-hosting on the web
+
 You have a few options for self hosting, you can:
 1. Run the prebuilt docker container.
 2. Deploy on a site like GitLab Pages. Jae has a [guide here](https://docs.j4.lc/Tutorials/Deploying-Sable-on-GitLab-Pages).
