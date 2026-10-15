@@ -530,7 +530,16 @@ article> :last-child {
   border: 1px solid var(--sable-primary-container-line);
   border-radius: 50%;
   background: var(--sable-bg-container);
-  transform: rotate(-8deg);
+}
+
+@keyframes home-logo-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .home-mark:hover img {
+    animation: home-logo-spin 2s linear infinite;
+  }
 }
 
 .home-links {
