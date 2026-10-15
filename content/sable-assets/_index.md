@@ -1,17 +1,18 @@
 +++
 title = "Sable assets"
-weight = 0
-template = "index.html"
-page_template = "page.html"
+weight = 9
+
+[extra]
+hide_page_list = true
 +++
 
 # Copyright and License
 
-Sable is a project that relies [AGPL-3.0 Only](https://github.com/SableClient/Sable/blob/dev/LICENSE) for the current version and [AGPL-3.0+](https://git.sable.moe/SableClient/sable-next/src/branch/main/LICENSE) for the upcoming version. \
+Sable is a project that relies [AGPL-3.0+](https://github.com/SableClient/sable-next/blob/main/LICENSE). \
 This hereby documentation is [CC-BY-4.0](https://github.com/SableClient/docs?tab=CC-BY-4.0-1-ov-file) \
-The logos, and other visual Sable created assets are [CC0-1.0 based Public Domain](https://github.com/SableClient/Sable/blob/dev/TRADEMARKS.md)
+The logos, and other visual Sable created assets are [CC0-1.0 based Public Domain](https://github.com/SableClient/sable-next/blob/main/TRADEMARKS.md)
 
-However, before using the assets please take note to read the [Trademark Document](https://github.com/SableClient/Sable/blob/dev/TRADEMARKS.md)
+However, before using the assets please take note to read the [Trademark Document](https://github.com/SableClient/sable-next/blob/main/TRADEMARKS.md)
 
 # Logo
 

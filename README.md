@@ -1,10 +1,13 @@
 # Sable Docs
+
 Documentation for Sable features, cosmetics, and utilities.
 
 ## Contributing
+
 Sable uses [Zola](https://www.getzola.org/), a lightweight, no-dependency, single-binary static site generator, for our documentation.
 
 ### Local Development
+
 To install Zola, see the [official installation guide](https://www.getzola.org/documentation/getting-started/installation/).
 
 Once installed, run the following command in the root directory to start a local preview server:
@@ -12,9 +15,11 @@ Once installed, run the following command in the root directory to start a local
 ```Bash
 zola serve # starts a server on http://127.0.0.1:1111
 ```
+
 To see pages marked as `draft = true`, use `zola serve --drafts`.
 
 ### Writing Content
+
 Documentation goes in the `/content` directory.
 
 Zola uses TOML (wrapped in +++) for frontmatter. Ensure every new .md file starts and ends with triple pluses.
@@ -23,9 +28,29 @@ Every folder inside `/content` needs an `_index.md` file to be rendered as a sec
 
 You can place images or files directly in the same folder as your markdown file, Zola will handle the relative paths automatically.
 
+Reusable UI pieces live in `templates/components/`. Call them from Markdown
+(and from section templates for auto page lists):
+
+```md
+{{<link_card href="/installation/" icon="download-simple" title="Install Sable" description="Get Sable for your device." />}}
+
+{% <platform_card icon="linux-logo" title="Linux"> %}
+[Flathub](https://flathub.org/apps/moe.sable.client)
+{% </platform_card> %}
+```
+
+All sections share `templates/section.html` / `templates/index.html` via
+`partials/section-main.html`. Pages use `templates/page.html`. Both extend
+`base.html`.
+
+Page icons live in `config.toml`. Theme colors are in `sass/`.
+
 ## Deployment
+
 The site is automatically built and deployed via GitHub Actions when changes are merged into main. To test a production build locally:
 
 ```Bash
 zola build # builds to /public folder
 ```
+
+Content is licensed under [CC BY 4.0](LICENSE).

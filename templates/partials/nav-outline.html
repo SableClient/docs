@@ -1,0 +1,11 @@
+<ul class="docs-outline" aria-label="{{ item_title }} sections">
+  {% for heading in outline_headings %}
+  {% if heading.children %}
+  {% for child in heading.children %}
+  <li><a href="#{{ child.id }}" title="{{ child.title }}">{{ child.title }}</a></li>
+  {% endfor %}
+  {% else %}
+  <li><a href="#{{ heading.id }}" title="{{ heading.title }}">{{ heading.title }}</a></li>
+  {% endif %}
+  {% endfor %}
+</ul>

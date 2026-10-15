@@ -1,108 +1,78 @@
 +++
-title = "Installation"
-weight = 0
-template = "index.html"
-page_template = "page.html"
+title = "Install Sable"
+description = "Get Sable for your device."
+weight = 1
+
+[extra]
+hide_page_list = true
 +++
 
-# Getting started
-The web app is available at [app.sable.moe](https://app.sable.moe/) and gets updated on frequently, as soon as a feature is deemed stable.
+{% <platform_grid> %}
+{% <platform_card icon="browser" title="Web"> %}
+[Open app.sable.moe](https://app.sable.moe/)
+{% </platform_card> %}
+{% <platform_card icon="windows-logo" title="Windows"> %}
+[Stable release](https://git.sable.moe/SableClient/sable-next/releases/latest)
+{% </platform_card> %}
+{% <platform_card icon="apple-logo" title="macOS"> %}
+[Stable release](https://git.sable.moe/SableClient/sable-next/releases/latest)
 
-Native desktop and mobile builds are still being worked on in [#88](https://github.com/SableClient/Sable/issues/88). For now, use the web app directly, or [install it as a Progressive Web App (PWA) on your phone.](https://www.installpwa.com/from/app.sable.moe)
+`brew install --cask SableClient/sable/sable`
+{% </platform_card> %}
+{% <platform_card icon="linux-logo" title="Linux"> %}
+[Flathub](https://flathub.org/apps/moe.sable.client), [AUR](https://aur.archlinux.org/packages/sable-bin) or [stable release](https://git.sable.moe/SableClient/sable-next/releases/latest)
+{% </platform_card> %}
+{% <platform_card icon="android-logo" title="Android"> %}
+[Google Play](https://play.google.com/store/apps/details?id=moe.sable.client) or [APK](https://git.sable.moe/SableClient/sable-next/releases/latest)
+{% </platform_card> %}
+{% <platform_card icon="device-mobile" title="iPhone or iPad"> %}
+[AltStore](https://intradeus.github.io/http-protocol-redirector?r=altstore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json) or [SideStore](https://intradeus.github.io/http-protocol-redirector?r=sidestore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json)
+{% </platform_card> %}
+{% </platform_grid> %}
 
-# Self-hosting
-You have a few options for self hosting, you can:
-1. Run the prebuilt docker container.
-2. Deploy on a site like GitLab Pages. Jae has a [guide here](https://docs.j4.lc/Tutorials/Deploying-Sable-on-GitLab-Pages).
-3. Build it yourself.
+[All release downloads](https://git.sable.moe/SableClient/sable-next/releases/latest)
 
-## Docker
+## Install the web app
 
-Prebuilt images are published to `ghcr.io/sableclient/sable`.
+Open [app.sable.moe](https://app.sable.moe/) in your browser, then use the menu to
+**Install app** or **Add to Home Screen**.
 
-- `latest` tracks the current `dev` branch image.
-- `X.Y.Z` tags are versioned releases.
-- `X.Y` tags float within a release line.
-- Pushes to `dev` also publish a short commit SHA tag.
+## Nightly builds
 
-Run the latest image with:
+Nightlies have the newest changes. They're rougher. Bugs and half-finished
+features are normal.
 
-```sh
-docker run --rm -p 8080:8080 ghcr.io/sableclient/sable:latest
-```
+| Platform | Nightly |
+| --- | --- |
+| Web | [next.sable.moe](https://next.sable.moe/) or [dev.sable.moe](https://dev.sable.moe/) |
+| Desktop | [Release downloads](https://git.sable.moe/SableClient/sable-next/releases) |
+| Android | [Obtainium setup](https://git.sable.moe/SableClient/sable-next/releases/download/nightly/obtainium.json) or [APK](https://git.sable.moe/SableClient/sable-next/releases) |
+| iPhone or iPad | [AltStore source](https://git.sable.moe/SableClient/sable-next/releases/download/nightly/altstore-source.json) or [SideStore source](https://git.sable.moe/SableClient/sable-next/releases/download/nightly/altstore-source.json) |
+| Linux | [Nightly Flatpak setup](https://sableclient.github.io/sable-next/sable-next-nightly.flatpakrepo) |
 
-Then open `http://localhost:8080`.
-
-If you want to override the bundled [`config.json`](config.json), mount your own
-file at `/app/config.json`:
-
-```yaml
-services:
-  sable:
-    image: ghcr.io/sableclient/sable:latest
-    ports:
-      - '8080:8080'
-    volumes:
-      - ./config.json:/app/config.json:ro
-```
-
-## Build it yourself
-
-To build and serve Sable yourself with nginx, clone this repo and build it:
-
-```sh
-pnpm i # Installs all dependencies
-pnpm run build # Compiles the app into the dist/ directory
-```
-
-After that, you can copy the dist/ directory to your server and serve it.
-
-* In the [`config.json`](config.json), you can modify the default homeservers, feature rooms/spaces, toggle the account switcher, and toggle experimental simplified slilding sync support.
-
-* To deploy on subdirectory, you need to rebuild the app youself after updating the `base` path in [`build.config.ts`](build.config.ts).
-    * For example, if you want to deploy on `https://sable.moe/app`, then set `base: '/app'`.
-
-## Injecting config at build time
-
-If you build Sable in a CI/CD pipeline, you can inject `config.json` overrides without
-editing the file directly. Set the `CLIENT_CONFIG_OVERRIDES_JSON` environment variable to
-a JSON object before running `pnpm run build`; the build script will deep-merge it into the
-bundled `config.json`.
+On Linux, add the remote and install the nightly Flatpak:
 
 ```sh
-export CLIENT_CONFIG_OVERRIDES_JSON='{"defaultHomeServer": "matrix.example.com"}'
-pnpm run build
+flatpak remote-add --if-not-exists sable-next-nightly https://sableclient.github.io/sable-next/sable-next-nightly.flatpakrepo
+flatpak install sable-next-nightly moe.sable.next.Nightly
 ```
 
-Set `CLIENT_CONFIG_OVERRIDES_STRICT=true` to make the build fail hard if the JSON is
-malformed (useful in CI where silent failures are dangerous).
+On Android or iOS, add the source link in AltStore, SideStore, or Obtainium, then
+install Sable from there.
 
-### Feature flag and experiment configuration
+## Notes for iOS
 
-The `experiments` block in `config.json` lets server operators define feature flags with
-optional percentage-based rollout.  Each key is a free-form experiment name; the value
-controls who gets it.
+You need AltStore or SideStore and an Apple account. With a free Apple ID, refresh
+the app every seven days.
 
-```json
-{
-  "experiments": {
-    "myFeature": {
-      "enabled": true,
-      "rolloutPercentage": 50,
-      "variants": ["treatment-a", "treatment-b"],
-      "controlVariant": "control"
-    }
-  }
-}
-```
+## Switching builds
 
-| Field | Type | Description |
-|---|---|---|
-| `enabled` | boolean | Master switch; `false` means no users receive the experiment |
-| `rolloutPercentage` | number (0–100) | Percentage of users bucketed into the experiment |
-| `variants` | string[] | Names for each treatment arm |
-| `controlVariant` | string | The variant name given to users outside the rollout |
+Before you jump between stable, nightly, or another build, read the
+[upgrade notes](https://github.com/SableClient/sable-next/blob/main/docs/v1-v2-migration.md).
 
-Bucketing is deterministic and stable: the same user always receives the same variant for
-a given experiment key.  You can see your current variant assignments in
-**Settings → Developer Tools → Features & Experiments**.
+## Host Sable yourself
+
+Want Sable on your own domain? Release archives include a web build you can
+extract into your own web root. See the
+[example Caddyfile](https://github.com/SableClient/sable-next/blob/main/Caddyfile)
+in the app repository.

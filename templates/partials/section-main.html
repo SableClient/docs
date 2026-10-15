@@ -1,0 +1,46 @@
+{% set is_home = section.extra.home | default(value=false, boolean=true) %}
+{% set hide_page_list = section.extra.hide_page_list | default(value=false, boolean=true) %}
+{% if is_home %}<div class="docs-home">{% endif %}
+
+    {% if not is_home %}
+    <header class="section-header">
+        <h1 class="title">{% set icon_path = section.path %}{% set icon_class = "icon" %}{% include "partials/icon.html"
+            %}<span>{{ section.title }}</span></h1>
+    </header>
+    {% endif %}
+
+    {{ section.content | safe }}
+
+    {% if not hide_page_list %}
+    {% if section.subsections %}
+    <section class="page-list" aria-label="Sections">
+        {% <link_grid> -%}
+            {%- for path in section.subsections -%}
+            {%- set child = get_section(path=path) -%}
+            {%- set icon = config.extra.page_icons | get(key=child.path, default="file-text") -%}
+            {%- set description = child.description | default(value="Browse this section.", boolean=true) -%}
+            {{
+            <link_card href={child.path} icon={icon} title={child.title} description={description} />}}
+            {%- endfor -%}
+            {%-
+        </link_grid> %}
+    </section>
+    {% endif %}
+
+    {% if section.pages %}
+    <section class="page-list" aria-label="Guides">
+        {% <link_grid> -%}
+            {%- for page in section.pages -%}
+            {%- set icon = config.extra.page_icons | get(key=page.path, default="file-text") -%}
+            {%- set description = page.description | default(value="Read this guide.", boolean=true) -%}
+            {{
+            <link_card href={page.path} icon={icon} title={page.title} description={description} />}}
+            {%- endfor -%}
+            {%-
+        </link_grid> %}
+    </section>
+    {% endif %}
+    {% endif %}
+
+    {% if is_home %}
+</div>{% endif %}

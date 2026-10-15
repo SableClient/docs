@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {%- block content -%}
-		<div class="page-header">
-				<p class="title">{{page.title}}</p>
-		</div>
-		{{ page.content | safe }}
+<header class="page-header">
+  <h1 class="title">{% set icon_path = page.path %}{% set icon_class = "icon" %}{% include "partials/icon.html"
+    %}<span>{{ page.title }}</span></h1>
+</header>
+{{ page.content | safe }}
 {%- endblock content -%}

@@ -1,0 +1,9 @@
+{% component help(title="Need help?", note="") %}
+<section class="home-help" aria-labelledby="home-help-heading">
+    <h2 id="home-help-heading">{{ title }}</h2>
+    <div class="home-help-links">
+{{ body }}
+</div>
+{% if note %}<p>{{ note }}</p>{% endif %}
+</section>
+{% endcomponent %}

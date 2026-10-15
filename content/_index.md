@@ -1,10 +1,22 @@
 +++
-title = "Introduction"
+title = "Welcome to Sable"
+description = "An almost stable Matrix client"
 sort_by = "weight"
+
+[extra]
+home = true
+hide_page_list = true
 +++
 
-Sable is a Matrix client built to enhance the user experience with quality-of-life features, cosmetics, utilities, and sheer usability. You can try it out at [app.sable.moe](https://app.sable.moe), which will update automatically when new changes are deemed stable.
+{{<hero title="Welcome to Sable" lead="An almost stable Matrix client" />}}
 
-Sable is a fork of [Cinny](https://github.com/cinnyapp/cinny/).
+{% <link_grid class="home-links"> %}
+{{<link_card href="/installation/" icon="download-simple" title="Install Sable" description="Web app or download for your device." class="home-card" />}}
+{{<link_card href="/features/" icon="book-open" title="Feature guides" description="Threads, notifications, personas, and more." class="home-card" />}}
+{{<link_card href="/matrix-guide/" icon="tree-structure" title="New to Matrix?" description="Accounts, servers, and rooms." class="home-card" />}}
+{% </link_grid> %}
 
-> **Note:** Sable is in constant development. New features and updates will be published frequently. If you have any questions regarding Sable, please reach out to us in our [Matrix chats](https://matrix.to/#/#sable:sable.moe).
+{% <help note="For account issues (password, login), ask whoever runs your homeserver."> %}
+{{<icon_link href="https://matrix.to/#/#sable:sable.moe" icon="chat-text" label="Ask in #sable:sable.moe" />}}
+{{<icon_link href="https://git.sable.moe/SableClient/sable-next/issues" icon="bug" label="Report a bug" />}}
+{% </help> %}

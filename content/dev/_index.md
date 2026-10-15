@@ -1,7 +1,9 @@
 +++
 title = "Development"
-weight = 6
-template = "index.html"
-page_template = "page.html"
+weight = 8
+sort_by = "weight"
 +++
 
+Contributor docs live in the
+[app repository](https://github.com/SableClient/sable-next).
+Start with [Contributing](./contributing/).

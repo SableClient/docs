@@ -1,0 +1,7 @@
+{% component link_card(href, icon, title, description="", class="") %}
+<a class="link-card{% if class %} {{ class }}{% endif %}" href="{{ href }}">
+    <span class="icon link-card-icon icon--{{ icon }}" aria-hidden="true"></span>
+    <strong>{{ title }}</strong>
+    {% if description %}<span class="link-card-description">{{ description }}</span>{% endif %}
+</a>
+{% endcomponent %}

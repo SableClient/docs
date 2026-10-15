@@ -1,0 +1,11 @@
+{% component hero(title, lead="", image="img/sable-logo.svg") %}
+<header class="home-hero">
+    <div class="home-hero-copy">
+        <h1>{{ title }}</h1>
+        {% if lead %}<p class="home-lead">{{ lead }}</p>{% endif %}
+    </div>
+    <div class="home-mark" aria-hidden="true">
+        <img src="{{ get_url(path=image) }}" alt="" width="88" height="88">
+    </div>
+</header>
+{% endcomponent %}

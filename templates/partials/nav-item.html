@@ -1,0 +1,12 @@
+<a class="docs-nav-item" href="{{ item_path }}" {% if current_path==item_path %} aria-current="page" {% endif %}>
+  {% set icon_path = item_path %}{% set icon_class = "icon docs-nav-icon" %}{% include "partials/icon.html" %}
+  <span>{{ item_title }}</span>
+</a>
+{% if current_path == item_path %}
+{% if page is defined %}
+{% set outline_headings = page.toc %}
+{% else %}
+{% set outline_headings = section.toc %}
+{% endif %}
+{% if outline_headings %}{% include "partials/nav-outline.html" %}{% endif %}
+{% endif %}
