@@ -17,21 +17,21 @@
     <p class="docs-nav-group-label">Guides</p>
     {% set group = get_section(path="features/_index.md") %}
     {% set item_path = group.path %}{% set item_title = group.title %}{% include "partials/nav-item.html" %}
-    {% if group.path in current_path %}
+    <div class="docs-nav-children">
     {% for guide in group.pages %}
     {% set item_path = guide.path %}{% set item_title = guide.title %}{% include "partials/nav-item.html" %}
     {% endfor %}
-    {% endif %}
+    </div>
   </div>
   <div class="docs-nav-group">
     <p class="docs-nav-group-label">Project</p>
     {% set item_path = "/dev/" %}{% set item_title = "Development" %}{% include "partials/nav-item.html" %}
-    {% if "/dev/" in current_path %}
+    <div class="docs-nav-children">
     {% set development = get_section(path="dev/_index.md") %}
     {% for guide in development.pages %}
     {% set item_path = guide.path %}{% set item_title = guide.title %}{% include "partials/nav-item.html" %}
     {% endfor %}
-    {% endif %}
+    </div>
     {% set item_path = "/sable-assets/" %}{% set item_title = "Sable assets" %}{% include "partials/nav-item.html" %}
   </div>
 </div>
