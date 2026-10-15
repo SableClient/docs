@@ -8,7 +8,7 @@ Sable uses [Zola](https://www.getzola.org/), a lightweight, no-dependency, singl
 
 ### Local Development
 
-To install Zola, see the [official installation guide](https://www.getzola.org/documentation/getting-started/installation/).
+Use Zola 0.23.6 or newer for the component templates in this site. To install Zola, see the [official installation guide](https://www.getzola.org/documentation/getting-started/installation/).
 
 Once installed, run the following command in the root directory to start a local preview server:
 
