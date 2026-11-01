@@ -20,10 +20,10 @@ hide_page_list = true
 `brew install --cask SableClient/sable/sable`
 {% </platform_card> %}
 {% <platform_card icon="linux-logo" title="Linux"> %}
-[Flathub](https://flathub.org/apps/moe.sable.client), [AUR](https://aur.archlinux.org/packages/sable-bin) or [stable release](https://git.sable.moe/SableClient/sable-next/releases/latest)
+[Flathub](https://flathub.org/apps/moe.sable.client), [AUR](https://aur.archlinux.org/packages/sable-bin), [Nix, apt or dnf](#package-repositories) or [stable release](https://git.sable.moe/SableClient/sable-next/releases/latest)
 {% </platform_card> %}
 {% <platform_card icon="android-logo" title="Android"> %}
-[Google Play](https://play.google.com/store/apps/details?id=moe.sable.client) or [APK](https://git.sable.moe/SableClient/sable-next/releases/latest)
+[Google Play](https://play.google.com/store/apps/details?id=moe.sable.client), [IzzyOnDroid](https://apt.izzysoft.de/packages/moe.sable.client) or [APK](https://git.sable.moe/SableClient/sable-next/releases/latest)
 {% </platform_card> %}
 {% <platform_card icon="device-mobile" title="iPhone or iPad"> %}
 [AltStore](https://intradeus.github.io/http-protocol-redirector?r=altstore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json) or [SideStore](https://intradeus.github.io/http-protocol-redirector?r=sidestore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json)
@@ -36,6 +36,57 @@ hide_page_list = true
 
 Open [app.sable.moe](https://app.sable.moe/) in your browser, then use the menu to
 **Install app** or **Add to Home Screen**.
+
+## Package repositories
+
+Sable publishes its own packages, so your package manager keeps it up to date.
+
+### Arch Linux
+
+Install `sable-bin` from the AUR with your preferred helper:
+
+```sh
+paru -S sable-bin
+```
+
+### Nix
+
+```sh
+nix run git+https://git.sable.moe/SableClient/sable-next#sable-desktop
+```
+
+### Debian and Ubuntu
+
+```sh
+sudo curl https://git.sable.moe/api/packages/SableClient/debian/repository.key -o /etc/apt/keyrings/forgejo-SableClient.asc
+echo "deb [signed-by=/etc/apt/keyrings/forgejo-SableClient.asc] https://git.sable.moe/api/packages/SableClient/debian stable main" | sudo tee /etc/apt/sources.list.d/sable.list
+sudo apt update && sudo apt install sable
+```
+
+### Fedora, RHEL and openSUSE
+
+```sh
+sudo dnf config-manager addrepo --from-repofile=https://git.sable.moe/api/packages/SableClient/rpm/stable.repo
+sudo dnf install sable
+```
+
+For nightly builds, use `sable-nightly-bin` on the AUR, or replace `stable` with
+`nightly` in the apt or dnf repository and install `sable-nightly`.
+
+### Homebrew
+
+`brew install --cask SableClient/sable/sable` uses the GitHub tap. To use the
+Forgejo mirror instead:
+
+```sh
+brew tap SableClient/sable https://git.sable.moe/SableClient/homebrew-sable.git
+```
+
+### IzzyOnDroid
+
+Use an F-Droid client, like [Neo Store](https://github.com/NeoApplications/Neo-Store)
+or [Droid-ify](https://droidify.app/), to install Sable from the
+[IzzyOnDroid repository](https://apt.izzysoft.de/packages/moe.sable.client).
 
 ## Nightly builds
 
@@ -54,7 +105,7 @@ On Linux, add the remote and install the nightly Flatpak:
 
 ```sh
 flatpak remote-add --if-not-exists sable-next-nightly https://sableclient.github.io/sable-next/sable-next-nightly.flatpakrepo
-flatpak install sable-next-nightly moe.sable.next.Nightly
+flatpak install sable-next-nightly moe.sable.next.electron.Nightly
 ```
 
 On Android or iOS, add the source link in AltStore, SideStore, or Obtainium, then
