@@ -76,3 +76,6 @@ Want Sable on your own domain? Release archives include a web build you can
 extract into your own web root. See the
 [example Caddyfile](https://github.com/SableClient/sable-next/blob/main/Caddyfile)
 in the app repository.
+
+To keep your Matrix stores on your own server and stay synced while the browser
+is closed, use [server mode](./server-mode/).
