@@ -17,6 +17,28 @@ For end-to-end encrypted rooms, the service worker relays the encrypted event to
 
 > **Note:** On iOS, encrypted message content in push notifications may work depending on the situation. When using a PWA, it will only work while the app is still running in the background — iOS aggressively suspends PWA processes, so if the PWA has been fully killed, encrypted content cannot be decrypted and the notification will show "Encrypted message" as the body. In a native browser (Safari), behaviour depends on whether a background tab is available. This is a platform limitation, not a Sable bug.
 
+# Using Your Own ntfy Server (Android)
+
+Android can receive push notifications through an [ntfy](https://ntfy.sh) server you run, either with the built-in connection or with the ntfy app.
+
+## Built-in Connection
+
+In **Settings → Notifications → Notification transport**, choose **Built-in (WebSocket)** and enter your server in **ntfy server**, e.g. `https://ntfy.example.org`. Leave it blank to use the server your Sable deployment ships with. The setting only applies to the current device.
+
+## ntfy App
+
+Set your server as the default in the ntfy app, then choose **UnifiedPush** in **Settings → Notifications → Notification transport** and pick ntfy as the distributor.
+
+## Server Access
+
+If your server uses `auth-default-access: deny-all`, allow anonymous access to the UnifiedPush topics (`up*`). The built-in connection subscribes without an account, so it needs read and write access:
+
+```
+ntfy access '*' 'up*' read-write
+```
+
+With the ntfy app signed in to your server, `write-only` is enough.
+
 # Notification Avatars
 
 Push notifications now show the room avatar (or the sender's avatar for DMs) instead of always falling back to the Sable app logo.
