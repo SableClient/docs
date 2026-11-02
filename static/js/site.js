@@ -301,23 +301,25 @@ const initInstallBanner = () => {
 		if (requested && configs[requested]) return requested;
 
 		const uaData = navigator.userAgentData?.platform?.toLowerCase() || '';
-		const ua = navigator.userAgent.toLowerCase();
+		const ua = (navigator.userAgent || '').toLowerCase();
+		const plat = (navigator.platform || '').toLowerCase();
+		const oscpu = (navigator.oscpu || '').toLowerCase();
 		const touch = navigator.maxTouchPoints || 0;
 
-		if (/iphone|ipad|ipod/.test(ua) || (uaData === 'macos' && touch > 1) || (navigator.platform === 'MacIntel' && touch > 1)) {
+		if (/iphone|ipad|ipod/.test(ua) || (plat === 'macintel' && touch > 1) || (uaData === 'macos' && touch > 1)) {
 			return 'ios';
 		}
-		if (/android/.test(ua) || uaData === 'android') {
+		if (/android/.test(ua) || uaData === 'android' || /android/.test(plat)) {
 			return 'android';
 		}
-		if (/windows|win32|win64/.test(ua) || uaData === 'windows') {
-			return 'windows';
+		if (/linux|x11/.test(ua) || /linux|x11/.test(plat) || /linux/.test(oscpu) || uaData === 'linux') {
+			return 'linux';
 		}
-		if (/macintosh|mac os x/.test(ua) || uaData === 'macos') {
+		if (/macintosh|mac os x/.test(ua) || /mac/.test(plat) || uaData === 'macos') {
 			return 'macos';
 		}
-		if (/linux/.test(ua) || uaData === 'linux') {
-			return 'linux';
+		if (/windows|win32|win64/.test(ua) || /win/.test(plat) || uaData === 'windows') {
+			return 'windows';
 		}
 		return 'web';
 	};
@@ -362,21 +364,30 @@ const initInstallBanner = () => {
 	const expandLink = document.getElementById('install-more-link');
 
 	const openDisclosure = () => {
-		if (disclosure) {
-			disclosure.open = true;
-			const toggleText = disclosure.querySelector('.toggle-text');
-			if (toggleText) toggleText.textContent = 'Hide options';
+		if (!disclosure) return;
+		disclosure.open = true;
+		const toggleText = disclosure.querySelector('.toggle-text');
+		if (toggleText) toggleText.textContent = 'Hide options';
+		try {
+			disclosure.scrollIntoView({
+				behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+				block: 'start',
+			});
+		} catch {
+			disclosure.scrollIntoView(true);
 		}
 	};
 
 	if (expandLink) {
 		expandLink.addEventListener('click', (event) => {
 			event.preventDefault();
-			openDisclosure();
-			disclosure?.scrollIntoView({
-				behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
-				block: 'start',
-			});
+			if (disclosure && disclosure.open) {
+				disclosure.open = false;
+				const toggleText = disclosure.querySelector('.toggle-text');
+				if (toggleText) toggleText.textContent = 'Show all';
+			} else {
+				openDisclosure();
+			}
 		});
 	}
 
