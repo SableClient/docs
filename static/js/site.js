@@ -178,6 +178,8 @@ const initDocsOutline = () => {
 		link.addEventListener('click', (event) => {
 			if (event.shiftKey || event.metaKey || event.ctrlKey || event.altKey || event.button !== 0) return;
 			event.preventDefault();
+			const detailsParent = heading.closest('details');
+			if (detailsParent) detailsParent.open = true;
 			pinned = index;
 			setActive(index);
 			const hash = link.hash;
@@ -202,6 +204,203 @@ const initDocsOutline = () => {
 	readHash();
 };
 
+const initInstallBanner = () => {
+	const hero = document.getElementById('install-hero');
+	if (!hero) return;
+
+	let releaseData = {
+		version: '2.3.0',
+		windows: { url: 'https://git.sable.moe/SableClient/sable-next/releases/download/v2.3.0/sable-2.3.0-x64.exe' },
+		macos: { url: 'https://git.sable.moe/SableClient/sable-next/releases/download/v2.3.0/sable-2.3.0-arm64.dmg' },
+		linux: { url: 'https://git.sable.moe/SableClient/sable-next/releases/download/v2.3.0/sable-2.3.0-x86_64.AppImage' },
+		android: {
+			playstore: 'https://play.google.com/store/apps/details?id=moe.sable.client',
+			apk: 'https://git.sable.moe/SableClient/sable-next/releases/download/v2.3.0/sable-2.3.0-android-universal.apk',
+		},
+		ios: { url: 'https://testflight.apple.com/join/PT2DSC3f' },
+		web: { url: 'https://app.sable.moe/' },
+	};
+
+	const scriptData = document.getElementById('sable-release-data');
+	if (scriptData) {
+		try {
+			const parsed = JSON.parse(scriptData.textContent);
+			if (parsed && typeof parsed === 'object') {
+				releaseData = { ...releaseData, ...parsed };
+			}
+		} catch {}
+	}
+
+	const filename = (url) => url.split('/').pop().split('#')[0].split('?')[0];
+	const configs = {
+		windows: {
+			key: 'windows',
+			title: 'Download Sable',
+			btnIcon: 'download-simple',
+			btnText: 'Download for Windows',
+			url: releaseData.windows.url,
+			download: filename(releaseData.windows.url),
+			external: false,
+			secondary: '',
+		},
+		macos: {
+			key: 'macos',
+			title: 'Download Sable',
+			btnIcon: 'download-simple',
+			btnText: 'Download for macOS',
+			url: releaseData.macos.url,
+			download: filename(releaseData.macos.url),
+			external: false,
+			secondary: '',
+		},
+		linux: {
+			key: 'linux',
+			title: 'Download Sable',
+			btnIcon: 'download-simple',
+			btnText: 'Download for Linux',
+			url: releaseData.linux.url,
+			download: filename(releaseData.linux.url),
+			external: false,
+			secondary: '',
+		},
+		android: {
+			key: 'android',
+			title: 'Download Sable',
+			btnIcon: 'arrow-right',
+			btnText: 'Get on Google Play',
+			url: releaseData.android.playstore,
+			download: '',
+			external: true,
+			secondary: `or <a href="${releaseData.android.apk}" download="${filename(releaseData.android.apk)}">download standalone APK</a>`,
+		},
+		ios: {
+			key: 'ios',
+			title: 'Download Sable',
+			btnIcon: 'arrow-right',
+			btnText: 'Join TestFlight Beta',
+			url: releaseData.ios.url,
+			download: '',
+			external: true,
+			secondary: '',
+		},
+		web: {
+			key: 'web',
+			title: 'Open Sable',
+			btnIcon: 'arrow-right',
+			btnText: 'Open app.sable.moe',
+			url: releaseData.web.url,
+			download: '',
+			external: true,
+			secondary: '',
+		},
+	};
+
+	const detectPlatform = () => {
+		const params = new URLSearchParams(window.location.search);
+		const requested = (params.get('platform') || params.get('os'))?.toLowerCase();
+		if (requested && configs[requested]) return requested;
+
+		const uaData = navigator.userAgentData?.platform?.toLowerCase() || '';
+		const ua = navigator.userAgent.toLowerCase();
+		const touch = navigator.maxTouchPoints || 0;
+
+		if (/iphone|ipad|ipod/.test(ua) || (uaData === 'macos' && touch > 1) || (navigator.platform === 'MacIntel' && touch > 1)) {
+			return 'ios';
+		}
+		if (/android/.test(ua) || uaData === 'android') {
+			return 'android';
+		}
+		if (/windows|win32|win64/.test(ua) || uaData === 'windows') {
+			return 'windows';
+		}
+		if (/macintosh|mac os x/.test(ua) || uaData === 'macos') {
+			return 'macos';
+		}
+		if (/linux/.test(ua) || uaData === 'linux') {
+			return 'linux';
+		}
+		return 'web';
+	};
+
+	const applyPlatform = (platformKey) => {
+		const config = configs[platformKey] || configs.windows;
+		hero.dataset.platform = config.key;
+
+		const title = document.getElementById('install-hero-title');
+		if (title) title.textContent = config.title;
+
+		const ctaBtn = document.getElementById('install-cta-btn');
+		const ctaIcon = document.getElementById('install-cta-icon');
+		const ctaText = document.getElementById('install-cta-text');
+
+		if (ctaBtn) {
+			ctaBtn.href = config.url;
+			if (config.download) {
+				ctaBtn.setAttribute('download', config.download);
+			} else {
+				ctaBtn.removeAttribute('download');
+			}
+			if (config.external) {
+				ctaBtn.setAttribute('target', '_blank');
+				ctaBtn.setAttribute('rel', 'noopener external');
+			} else {
+				ctaBtn.removeAttribute('target');
+				ctaBtn.removeAttribute('rel');
+			}
+		}
+
+		if (ctaIcon) ctaIcon.className = `icon icon--${config.btnIcon}`;
+		if (ctaText) ctaText.textContent = config.btnText;
+
+		const secondary = document.getElementById('install-hero-secondary');
+		if (secondary) secondary.innerHTML = config.secondary;
+	};
+
+	applyPlatform(detectPlatform());
+
+	const disclosure = document.getElementById('other-platforms');
+	const expandLink = document.getElementById('install-more-link');
+
+	const openDisclosure = () => {
+		if (disclosure) {
+			disclosure.open = true;
+			const toggleText = disclosure.querySelector('.toggle-text');
+			if (toggleText) toggleText.textContent = 'Hide options';
+		}
+	};
+
+	if (expandLink) {
+		expandLink.addEventListener('click', (event) => {
+			event.preventDefault();
+			openDisclosure();
+			disclosure?.scrollIntoView({
+				behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+				block: 'start',
+			});
+		});
+	}
+
+	if (disclosure) {
+		disclosure.addEventListener('toggle', () => {
+			const toggleText = disclosure.querySelector('.toggle-text');
+			if (toggleText) {
+				toggleText.textContent = disclosure.open ? 'Hide options' : 'Show all';
+			}
+		});
+
+		const checkHash = () => {
+			if (location.hash) {
+				const targetId = decodeURIComponent(location.hash.slice(1));
+				if (targetId === 'other-platforms' || disclosure.querySelector(`#${CSS.escape(targetId)}`)) {
+					openDisclosure();
+				}
+			}
+		};
+		window.addEventListener('hashchange', checkHash);
+		checkHash();
+	}
+};
+
 if (document.readyState === 'loading') {
 	document.addEventListener(
 		'DOMContentLoaded',
@@ -211,6 +410,7 @@ if (document.readyState === 'loading') {
 			initTableScroll();
 			initDocsNav();
 			initDocsOutline();
+			initInstallBanner();
 		},
 		{ once: true },
 	);
@@ -220,4 +420,6 @@ if (document.readyState === 'loading') {
 	initTableScroll();
 	initDocsNav();
 	initDocsOutline();
+	initInstallBanner();
 }
+

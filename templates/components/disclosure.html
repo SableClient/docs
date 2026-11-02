@@ -1,0 +1,20 @@
+{% component disclosure(summary, hint="", id="other-platforms") %}
+<details class="other-platforms-disclosure" id="{{ id }}">
+<summary class="other-platforms-summary">
+<div class="other-platforms-summary-info">
+<span class="icon icon--list" aria-hidden="true"></span>
+<div>
+<span class="other-platforms-summary-title">{{ summary }}</span>
+{% if hint %}<span class="other-platforms-summary-hint">{{ hint }}</span>{% endif %}
+</div>
+</div>
+<span class="other-platforms-toggle-btn">
+<span class="toggle-text">Show all</span>
+<span class="icon icon--caret-down toggle-arrow" aria-hidden="true"></span>
+</span>
+</summary>
+<div class="other-platforms-body">
+{{ body }}
+</div>
+</details>
+{% endcomponent %}

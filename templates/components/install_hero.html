@@ -1,0 +1,56 @@
+{% component install_hero() %}
+{% set win_manifest = load_data(url="https://git.sable.moe/SableClient/sable-next/releases/download/latest/latest.yml", format="yaml", required=false) %}
+{% set mac_manifest = load_data(url="https://git.sable.moe/SableClient/sable-next/releases/download/latest/latest-mac.yml", format="yaml", required=false) %}
+{% set linux_manifest = load_data(url="https://git.sable.moe/SableClient/sable-next/releases/download/latest/latest-linux.yml", format="yaml", required=false) %}
+{% set version = "2.3.0" %}
+{% if win_manifest and win_manifest.version %}{% set version = win_manifest.version %}{% endif %}
+{% set win_exe_url = "https://git.sable.moe/SableClient/sable-next/releases/download/v" ~ version ~ "/sable-" ~ version ~ "-x64.exe" %}
+{% if win_manifest and win_manifest.path %}{% set win_exe_url = win_manifest.path %}{% endif %}
+{% set mac_dmg_url = "https://git.sable.moe/SableClient/sable-next/releases/download/v" ~ version ~ "/sable-" ~ version ~ "-arm64.dmg" %}
+{% if mac_manifest and mac_manifest.files %}
+{% for file in mac_manifest.files %}
+{% if ".dmg" in file.url %}{% set_global mac_dmg_url = file.url %}{% endif %}
+{% endfor %}
+{% endif %}
+{% set linux_appimage_url = "https://git.sable.moe/SableClient/sable-next/releases/download/v" ~ version ~ "/sable-" ~ version ~ "-x86_64.AppImage" %}
+{% if linux_manifest and linux_manifest.files %}
+{% for file in linux_manifest.files %}
+{% if ".AppImage" in file.url %}{% set_global linux_appimage_url = file.url %}{% endif %}
+{% endfor %}
+{% endif %}
+{% set android_apk_url = "https://git.sable.moe/SableClient/sable-next/releases/download/v" ~ version ~ "/sable-" ~ version ~ "-android-universal.apk" %}
+{% set ios_testflight_url = "https://testflight.apple.com/join/PT2DSC3f" %}
+{% set playstore_url = "https://play.google.com/store/apps/details?id=moe.sable.client" %}
+{% set web_app_url = "https://app.sable.moe/" %}
+<script id="sable-release-data" type="application/json">
+{
+  "windows": { "url": "{{ win_exe_url }}" },
+  "macos": { "url": "{{ mac_dmg_url }}" },
+  "linux": { "url": "{{ linux_appimage_url }}" },
+  "android": { "playstore": "{{ playstore_url }}", "apk": "{{ android_apk_url }}" },
+  "ios": { "url": "{{ ios_testflight_url }}" },
+  "web": { "url": "{{ web_app_url }}" }
+}
+</script>
+<section class="install-hero" id="install-hero" data-platform="windows" aria-labelledby="install-hero-title">
+<div class="install-hero-body">
+<h2 class="install-hero-title" id="install-hero-title">Download Sable</h2>
+<div class="install-cta-wrap">
+<a class="install-cta-btn" id="install-cta-btn" href="{{ win_exe_url }}" download>
+<span class="icon icon--download-simple" id="install-cta-icon" aria-hidden="true"></span>
+<span id="install-cta-text">Download for Windows</span>
+</a>
+</div>
+<div class="install-hero-secondary" id="install-hero-secondary"></div>
+<div class="install-hero-footer">
+<a href="#other-platforms" class="install-more-link" id="install-more-link">
+<span>Show other platforms and install options</span>
+<span class="icon icon--caret-down" aria-hidden="true"></span>
+</a>
+</div>
+</div>
+<div class="home-mark" aria-hidden="true">
+<img src="{{ get_url(path="img/sable-logo.svg") }}" alt="" width="88" height="88">
+</div>
+</section>
+{% endcomponent %}

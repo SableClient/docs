@@ -7,6 +7,10 @@ weight = 1
 hide_page_list = true
 +++
 
+{{<install_hero />}}
+
+{% <disclosure summary="All platforms & alternative options" hint="Direct downloads, web app, package repositories, and nightly builds"> %}
+
 {% <platform_grid> %}
 {% <platform_card icon="browser" title="Web"> %}
 [Open app.sable.moe](https://app.sable.moe/)
@@ -26,11 +30,11 @@ hide_page_list = true
 [Google Play](https://play.google.com/store/apps/details?id=moe.sable.client), [IzzyOnDroid](https://apt.izzysoft.de/packages/moe.sable.client) or [APK](https://git.sable.moe/SableClient/sable-next/releases/latest)
 {% </platform_card> %}
 {% <platform_card icon="device-mobile" title="iPhone or iPad"> %}
-[AltStore](https://intradeus.github.io/http-protocol-redirector?r=altstore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json) or [SideStore](https://intradeus.github.io/http-protocol-redirector?r=sidestore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json)
+[Apple TestFlight](https://testflight.apple.com/join/PT2DSC3f) (recommended), [AltStore](https://intradeus.github.io/http-protocol-redirector?r=altstore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json) or [SideStore](https://intradeus.github.io/http-protocol-redirector?r=sidestore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json)
 {% </platform_card> %}
 {% </platform_grid> %}
 
-[All release downloads](https://git.sable.moe/SableClient/sable-next/releases/latest)
+[All release downloads on Git](https://git.sable.moe/SableClient/sable-next/releases/latest)
 
 ## Install the web app
 
@@ -98,7 +102,7 @@ features are normal.
 | Web | [next.sable.moe](https://next.sable.moe/) or [dev.sable.moe](https://dev.sable.moe/) |
 | Desktop | [Release downloads](https://git.sable.moe/SableClient/sable-next/releases) |
 | Android | [Obtainium setup](https://git.sable.moe/SableClient/sable-next/releases/download/nightly/obtainium.json) or [APK](https://git.sable.moe/SableClient/sable-next/releases) |
-| iPhone or iPad | [AltStore source](https://git.sable.moe/SableClient/sable-next/releases/download/nightly/altstore-source.json) or [SideStore source](https://git.sable.moe/SableClient/sable-next/releases/download/nightly/altstore-source.json) |
+| iPhone or iPad | [TestFlight Beta](https://testflight.apple.com/join/PT2DSC3f), [AltStore source](https://git.sable.moe/SableClient/sable-next/releases/download/nightly/altstore-source.json) or [SideStore source](https://git.sable.moe/SableClient/sable-next/releases/download/nightly/altstore-source.json) |
 | Linux | [Nightly Flatpak setup](https://sableclient.github.io/sable-next/sable-next-nightly.flatpakrepo) |
 
 On Linux, add the remote and install the nightly Flatpak:
@@ -108,13 +112,14 @@ flatpak remote-add --if-not-exists sable-next-nightly https://sableclient.github
 flatpak install sable-next-nightly moe.sable.next.electron.Nightly
 ```
 
-On Android or iOS, add the source link in AltStore, SideStore, or Obtainium, then
+On Android or iOS, add the source link in AltStore, SideStore, or Obtainium, or join TestFlight, then
 install Sable from there.
 
 ## Notes for iOS
 
-You need AltStore or SideStore and an Apple account. With a free Apple ID, refresh
-the app every seven days.
+Join the public beta via [Apple TestFlight](https://testflight.apple.com/join/PT2DSC3f) for simple installation and automatic updates.
+
+If you prefer sideloading, you can use AltStore or SideStore with an Apple account. With a free Apple ID, refresh the app every seven days.
 
 ## Switching builds
 
@@ -130,3 +135,5 @@ in the app repository.
 
 To keep your Matrix stores on your own server and stay synced while the browser
 is closed, use [server mode](./server-mode/).
+
+{% </disclosure> %}
