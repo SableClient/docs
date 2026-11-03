@@ -37,45 +37,54 @@ hide_page_list = true
 [All release downloads on Git](https://git.sable.moe/SableClient/sable-next/releases/latest)
 
 ## Install the web app
-
 Open [app.sable.moe](https://app.sable.moe/) in your browser, then use the menu to
 **Install app** or **Add to Home Screen**.
+Nightly web versions are available at [dev.sable.moe](https://dev.sable.moe/) or [next.sable.moe](https://next.sable.moe/)
 
 ## Package repositories
 
 Sable publishes its own packages, so your package manager keeps it up to date.
 
 ### Arch Linux
-
-Install `sable-bin` from the AUR with your preferred helper:
-
+Install `sable-bin` or `sable-nightly-bin` from the AUR with your preferred helper:
 ```sh
+# Stable
 paru -S sable-bin
+# Nightly
+paru -S sable-nightly-bin
 ```
-
 ### Nix
-
+Available as a flake from our git, replace `nix run` with `nix profile add` to install.
 ```sh
+# Stable
+nix run "git+https://git.sable.moe/SableClient/sable-next?ref=refs/tags/latest#sable-desktop"
+# Dev
 nix run git+https://git.sable.moe/SableClient/sable-next#sable-desktop
 ```
 
 ### Debian and Ubuntu
 
 ```sh
+# Stable
 sudo curl https://git.sable.moe/api/packages/SableClient/debian/repository.key -o /etc/apt/keyrings/forgejo-SableClient.asc
 echo "deb [signed-by=/etc/apt/keyrings/forgejo-SableClient.asc] https://git.sable.moe/api/packages/SableClient/debian stable main" | sudo tee /etc/apt/sources.list.d/sable.list
 sudo apt update && sudo apt install sable
+# Nightly
+sudo curl https://git.sable.moe/api/packages/SableClient/debian/repository.key -o /etc/apt/keyrings/forgejo-SableClient.asc
+echo "deb [signed-by=/etc/apt/keyrings/forgejo-SableClient.asc] https://git.sable.moe/api/packages/SableClient/debian nightly main" | sudo tee /etc/apt/sources.list.d/sable.list
+sudo apt update && sudo apt install sable-nightly
 ```
 
 ### Fedora, RHEL and openSUSE
 
 ```sh
+# Stable
 sudo dnf config-manager addrepo --from-repofile=https://git.sable.moe/api/packages/SableClient/rpm/stable.repo
 sudo dnf install sable
+# Nightly
+sudo dnf config-manager addrepo --from-repofile=https://git.sable.moe/api/packages/SableClient/rpm/nightly.repo
+sudo dnf install sable-nightly
 ```
-
-For nightly builds, use `sable-nightly-bin` on the AUR, or replace `stable` with
-`nightly` in the apt or dnf repository and install `sable-nightly`.
 
 ### Homebrew
 
