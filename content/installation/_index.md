@@ -142,6 +142,10 @@ extract into your own web root. See the
 [example Caddyfile](https://github.com/SableClient/sable-next/blob/main/Caddyfile)
 in the app repository.
 
+For custom names, logos, themes and login options, see
+[website branding](@/installation/branding.md). To configure accounts across web,
+desktop and mobile, use [homeserver configuration](@/installation/homeserver-configuration.md).
+
 To keep your Matrix stores on your own server and stay synced while the browser
 is closed, use [server mode](./server-mode/).
 
