@@ -40,8 +40,8 @@ apply.
 
 ## Where this applies
 
-These rules apply to Sable's official GitHub repositories and Matrix space and
-rooms.
+These rules apply to Sable's official GitHub repositories, Matrix space and rooms as well as profiles within those spaces.
+Public profiles as well as per space/room profiles will be moderated as both are visible and we can not reliably work with potential state mismatches. 
 
 We do not police people's unrelated private lives. We may act on credible
 threats, doxxing, or targeted harassment outside these spaces when it is
