@@ -33,19 +33,30 @@ However, before using the assets please take note to read the [Trademark Documen
 
 Feel free to recolor, distort, give it a sword, or glasses when using the logo.
 
-# 88x31
+# 88x31s
 
 <a href="https://docs.sable.moe/img/88x31.png" style="display: flex; gap: 1rem;">
     <img src="/img/88x31.png" alt="Sable logo" width="264" height="93" style="image-rendering: pixelated;">
     <img src="/img/88x31.png" alt="Sable logo" width="88" height="31" style="height: 31px;">
 </a>
 
-If you wish to add a button to sable on your webbed site this is a simple 88x31. \
+<a href="https://docs.sable.moe/img/doll88x31.png" style="display: flex; gap: 1rem;">
+    <img src="/img/doll88x31.png" alt="Sable logo" width="264" height="93" style="image-rendering: pixelated;">
+    <img src="/img/doll88x31.png" alt="Sable logo" width="88" height="31" style="height: 31px;">
+</a>
+
+If you wish to add a button to sable on your webbed site these are simple 88x31s. \
 Also feel free to distort, recolor, or dress in a night gown.
 
-You can use it simply with:
+You can use them simply with:
 ```html
+# for the main badge
 <a href="https://sable.moe">
     <img src="https://docs.sable.moe/img/88x31.png" alt="Sable Matrix Client" width="88" height="31">
+</a>
+
+# for the almost stable badge
+<a href="https://sable.moe">
+    <img src="https://docs.sable.moe/img/doll88x31.png" alt="Sable Matrix Client" width="88" height="31">
 </a>
 ```
