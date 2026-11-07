@@ -154,7 +154,7 @@ a {
   mask: var(--icon) center / contain no-repeat;
 }
 
-@each $name in house, download-simple, tree-structure, book-open, columns, chat-text, code, image, file-text, list, x, sun, moon, bug, compass, terminal-window, chats-circle, bell, shield-check, arrows-clockwise, clock, text-aa, circle, user-switch, chart-bar, map-pin, wrench, magnifying-glass, git-pull-request, scroll, browser, windows-logo, apple-logo, linux-logo, android-logo, device-mobile, arrow-right, caret-down, caret-right {
+@each $name in house, download-simple, tree-structure, book-open, columns, chat-text, code, image, file-text, list, x, sun, moon, bug, compass, terminal-window, chats-circle, bell, shield-check, arrows-clockwise, clock, text-aa, circle, user-switch, chart-bar, map-pin, wrench, magnifying-glass, git-pull-request, scroll, browser, windows-logo, apple-logo, linux-logo, android-logo, device-mobile, arrow-right, caret-down, caret-right, hard-drives, paint-brush, sliders-horizontal {
   .icon--#{$name} { --icon: url("icons/#{$name}.svg"); }
 }
 

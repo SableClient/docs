@@ -2,6 +2,7 @@
 title = "Install Sable"
 description = "Get Sable for your device."
 weight = 1
+sort_by = "weight"
 
 [extra]
 hide_page_list = true
