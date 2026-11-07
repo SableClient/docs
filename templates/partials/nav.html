@@ -11,6 +11,12 @@
     <p class="docs-nav-group-label">Start here</p>
     {% set item_path = "/" %}{% set item_title = "Introduction" %}{% include "partials/nav-item.html" %}
     {% set item_path = "/installation/" %}{% set item_title = "Install Sable" %}{% include "partials/nav-item.html" %}
+    <div class="docs-nav-children">
+    {% set installation = get_section(path="installation/_index.md") %}
+    {% for guide in installation.pages %}
+    {% set item_path = guide.path %}{% set item_title = guide.title %}{% include "partials/nav-item.html" %}
+    {% endfor %}
+    </div>
     {% set item_path = "/matrix-guide/" %}{% set item_title = "Matrix basics" %}{% include "partials/nav-item.html" %}
   </div>
   <div class="docs-nav-group">

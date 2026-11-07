@@ -1,10 +1,12 @@
 +++
 title = "Server Mode"
-description = "Run Sable and its Matrix stores on your own server."
+description = "Run Sable on your own server and keep syncing when the browser is closed."
 weight = 2
 +++
 
 Sable can run on a server you control. In server mode, your Matrix stores and encryption keys live on the server, and your accounts keep syncing when the browser is closed. You open Sable in any browser, sign in to the server, then sign in to Matrix.
+
+One server can host several people, each with their own login. You need a host that runs Docker and a domain with HTTPS.
 
 > **Note:** The server holds your encryption keys and can read your messages while it is running. Whoever runs the server can access every user's data, so protect the host and its data directory.
 
