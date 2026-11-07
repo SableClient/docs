@@ -23,7 +23,7 @@
   src: url("fonts/Nunito-VariableFont_wght.ttf") format("truetype");
   font-style: normal;
   font-weight: 200 900;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
@@ -31,7 +31,25 @@
   src: url("fonts/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
   font-style: italic;
   font-weight: 200 900;
-  font-display: optional;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/nunito-latin-ext-wght-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/nunito-latin-wght-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -39,7 +57,7 @@
   src: url("fonts/SpaceMono-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
@@ -47,7 +65,7 @@
   src: url("fonts/SpaceMono-Italic.ttf") format("truetype");
   font-style: italic;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
@@ -55,7 +73,7 @@
   src: url("fonts/SpaceMono-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
-  font-display: optional;
+  font-display: swap;
 }
 
 html {
@@ -66,6 +84,14 @@ html {
   scrollbar-gutter: stable both-edges;
   background: var(--sable-bg-container);
   color-scheme: light dark;
+  accent-color: var(--sable-primary-main);
+  caret-color: var(--sable-primary-main);
+  scrollbar-color: var(--sable-surface-var-container-active) transparent;
+}
+
+::selection {
+  background: var(--sable-primary-container-active);
+  color: var(--sable-primary-on-container);
 }
 
 body {
@@ -101,11 +127,9 @@ a {
   }
 }
 
-a:focus-visible,
-button:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 0.25rem var(--sable-focus-ring);
-  border-radius: 0.5rem;
+:focus-visible {
+  outline: 2px solid var(--sable-primary-main);
+  outline-offset: 2px;
 }
 
 .sr-only {
@@ -497,6 +521,20 @@ article> :last-child {
   padding-top: var(--sable-space-300);
 }
 
+.home-hero,
+.install-hero {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    inset: auto 0 0;
+    height: 6px;
+    background: linear-gradient(90deg, #6e56cf 0 20%, #bdb6ec 20% 40%, #654a9f 40% 60%, #5bcefa 60% 70%, #f5a9b8 70% 80%, #9ad0da 80% 100%);
+    content: "";
+  }
+}
+
 .home-hero {
   display: flex;
   align-items: center;
@@ -677,15 +715,19 @@ article h3 {
   p { display: flex; flex-wrap: wrap; gap: var(--sable-space-200); margin: 0; }
 
   p a {
-    padding: var(--sable-space-100) var(--sable-space-300);
-    border: 1px solid var(--sable-bg-container-line);
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0 var(--sable-space-400);
+    border: 1px solid var(--sable-primary-container-line);
     border-radius: var(--sable-radius);
-    color: var(--sable-bg-on-container) !important;
-    font-size: 0.875rem;
-    font-weight: 600;
+    background: var(--sable-primary-container);
+    color: var(--sable-primary-on-container) !important;
+    font-size: 0.9375rem;
+    font-weight: 700;
     text-decoration: none;
 
-    &:hover { background: var(--sable-bg-container-hover); }
+    &:hover { background: var(--sable-primary-container-hover); }
   }
 
   p:first-of-type a:first-child {
@@ -769,11 +811,6 @@ article h3 {
     &:active {
       background: var(--sable-primary-main-active);
       transform: translateY(0);
-    }
-
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 0.2rem var(--sable-focus-ring);
     }
 
     .icon {
@@ -1168,6 +1205,11 @@ h5,
 h6 {
   color: var(--sable-bg-on-container);
   line-height: 1.15;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 .nav-toggle-button,

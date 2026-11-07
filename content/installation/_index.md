@@ -22,7 +22,7 @@ hide_page_list = true
 [Download](https://git.sable.moe/SableClient/sable-next/releases/latest) [Homebrew](#homebrew)
 {% </platform_card> %}
 {% <platform_card icon="linux-logo" title="Linux"> %}
-[Flathub](https://flathub.org/apps/moe.sable.client) [AUR](https://aur.archlinux.org/packages/sable-bin) [Packages](#package-repositories)
+[Flathub](https://flathub.org/apps/moe.sable.client) [AUR](https://aur.archlinux.org/packages/sable-bin) [Nix, apt or dnf](#package-repositories)
 {% </platform_card> %}
 {% <platform_card icon="android-logo" title="Android"> %}
 [Google Play](https://play.google.com/store/apps/details?id=moe.sable.client) [IzzyOnDroid](https://apt.izzysoft.de/packages/moe.sable.client) [APK](https://git.sable.moe/SableClient/sable-next/releases/latest)
