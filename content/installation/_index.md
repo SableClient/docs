@@ -13,24 +13,22 @@ hide_page_list = true
 
 {% <platform_grid> %}
 {% <platform_card icon="browser" title="Web"> %}
-[Open app.sable.moe](https://app.sable.moe/)
+[app.sable.moe](https://app.sable.moe/)
 {% </platform_card> %}
 {% <platform_card icon="windows-logo" title="Windows"> %}
-[Stable release](https://git.sable.moe/SableClient/sable-next/releases/latest)
+[Download](https://git.sable.moe/SableClient/sable-next/releases/latest)
 {% </platform_card> %}
 {% <platform_card icon="apple-logo" title="macOS"> %}
-[Stable release](https://git.sable.moe/SableClient/sable-next/releases/latest)
-
-`brew install --cask SableClient/sable/sable`
+[Download](https://git.sable.moe/SableClient/sable-next/releases/latest) [Homebrew](#homebrew)
 {% </platform_card> %}
 {% <platform_card icon="linux-logo" title="Linux"> %}
-[Flathub](https://flathub.org/apps/moe.sable.client), [AUR](https://aur.archlinux.org/packages/sable-bin), [Nix, apt or dnf](#package-repositories) or [stable release](https://git.sable.moe/SableClient/sable-next/releases/latest)
+[Flathub](https://flathub.org/apps/moe.sable.client) [AUR](https://aur.archlinux.org/packages/sable-bin) [Packages](#package-repositories)
 {% </platform_card> %}
 {% <platform_card icon="android-logo" title="Android"> %}
-[Google Play](https://play.google.com/store/apps/details?id=moe.sable.client), [IzzyOnDroid](https://apt.izzysoft.de/packages/moe.sable.client) or [APK](https://git.sable.moe/SableClient/sable-next/releases/latest)
+[Google Play](https://play.google.com/store/apps/details?id=moe.sable.client) [IzzyOnDroid](https://apt.izzysoft.de/packages/moe.sable.client) [APK](https://git.sable.moe/SableClient/sable-next/releases/latest)
 {% </platform_card> %}
 {% <platform_card icon="device-mobile" title="iPhone or iPad"> %}
-[Apple TestFlight](https://testflight.apple.com/join/PT2DSC3f) (recommended), [AltStore](https://intradeus.github.io/http-protocol-redirector?r=altstore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json) or [SideStore](https://intradeus.github.io/http-protocol-redirector?r=sidestore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json)
+[App Store](https://apps.apple.com/us/app/sable-chat/id6820482696) [TestFlight](https://testflight.apple.com/join/PT2DSC3f) [AltStore](https://intradeus.github.io/http-protocol-redirector?r=altstore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json) [SideStore](https://intradeus.github.io/http-protocol-redirector?r=sidestore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json)
 {% </platform_card> %}
 {% </platform_grid> %}
 
@@ -126,9 +124,10 @@ install Sable from there.
 
 ## Notes for iOS
 
-Join the public beta via [Apple TestFlight](https://testflight.apple.com/join/PT2DSC3f) for simple installation and automatic updates.
-
-If you prefer sideloading, you can use AltStore or SideStore with an Apple account. With a free Apple ID, refresh the app every seven days.
+Sable is on the [App Store](https://apps.apple.com/us/app/sable-chat/id6820482696).
+To try new versions early, join the public beta on [Apple TestFlight](https://testflight.apple.com/join/PT2DSC3f).
+To sideload it instead, you need AltStore or SideStore and an Apple account. With a
+free Apple ID, refresh the app every seven days.
 
 ## Switching builds
 
