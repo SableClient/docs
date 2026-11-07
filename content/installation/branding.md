@@ -95,5 +95,5 @@ and the relevant files in `icons/`. Browser theme colours and the iOS home scree
 name also use tags in `src/app.html`, which requires rebuilding the web client.
 Desktop and mobile app names and launcher icons require a custom build.
 
-See the [web hosting guide](https://github.com/SableClient/sable-next/blob/main/docs/web.md)
+See the [web hosting guide](/installation/self-hosting/)
 for push, GIFs, calls and other configuration options.
