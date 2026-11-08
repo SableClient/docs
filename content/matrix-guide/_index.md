@@ -16,10 +16,6 @@ hide_page_list = true
 Matrix is, at it's core, another chat-app. Similar to Discord, Signal,
 WhatsApp or whatever else you might be using.
 
-It has some important differences though, that makes it resistant to
-many of the reasons you probably seek refuge here; But let's not get
-ahead of ourselves and actually talk about what Matrix *is*.
-
 Matrix is a decentralized approach to messaging. Instead of having
 one, single provider, we have multiple! And thanks to the underlying
 tech, we can all talk to one another regardless of the provider you
@@ -46,9 +42,8 @@ more](https://matrix.org/ecosystem/clients) out there, including
 [server-software](https://matrix.org/ecosystem/servers) for those of
 us that want to become their own provider ("city").
 
-One more thing to note, if the link above wasn't clear, there is 
-multiple apps you can install and use! Pick the one you like most, 
-but judging from the site you're on, you probably came here for 
+There is multiple apps you can install and use! Pick the one you like
+most, but judging from the site you're on, you probably came here for
 Sable.
 
 But enough with the sales pitch, let's get to actually hopping on 
@@ -65,34 +60,31 @@ the web at <https://app.sable.moe>
 
 You can leave options at their default and just hit `Continue with
 Matrix.org` and create an account. Though, it should be stated that
-further down in this guide, we list some reasons as to why you might
-wanna consider spending a *little* extra time picking out another
-provider (or "city").
+further down in this guide, we [list some
+reasons](#why-you-should-consider-signing-up-somewhere-other-than-matrix-org)
+as to why you might wanna consider spending a *little* extra time
+picking out another provider (or "city").
 
 Regardless, you can continue and register, and when you're done you'll
 be at an empty screen that looks and feels a bit like Discord!
 
 From here you can:
+
 - Create a room from the sidebar > Home > Create room
-- Create a space (more on that later) from the sidebar > [+] > Create
-  new space
+- Create a space from the sidebar > [+] > Create new space
 - Join an existing room from the sidebar > Home > Join with Address
 - Swap over to Direct Messages with the icon below Home in the sidebar
 
 ### Useful words and terminology
 
-- Spaces: A collection of rooms! This can either be for private use,
-  or for public communities. They have separate permissions from the
-  rooms inside, and act a little bit like Discord Servers or 
-  Slack Workspaces.
-- Direct Message: Anything that appears in the Direct Messages tab,
-  usually one-on-one discussions.
-- Alias or Address: The human-readable address to a room or space,
-  usually something like this: `#example:matrix.org`.
-- Invite: manually inviting a specific user to a room or DM using the
-  UI; Links to rooms/spaces are *not* called invites by most people.
-- MXID: Short for "Matrix ID", it's your unique username+provider
-  combo, like `@bob:matrix.org`.
+| Word | Meaning |
+|---|---|
+| Room | A chatroom, whether that's a groupchat or direct message. |
+| Space | A collection of rooms! This can either be for private use, or for public communities. They have separate permissions from the rooms inside, and act a little bit like Discord Servers or Slack Workspaces. |
+| Direct Message | Anything that appears in the Direct Messages tab, usually one-on-one discussions. |
+| Alias | The human-readable address to a room or space, usually something like this: `#example:matrix.org`. |
+| Invite | manually inviting a specific user to a room or DM using the UI; Links to rooms/spaces are *not* called invites by most people. |
+| MXID | Short for "Matrix ID", it's your unique username+provider combo, like `@bob:matrix.org`. |
 
 ### Joining a community
 
