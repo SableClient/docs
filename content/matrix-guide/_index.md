@@ -9,7 +9,7 @@ hide_page_list = true
 
 <!-- hah, easter egg! This page was written by Alexia Starling. -->
 
-> [!TIP]
+> [!NOTE]
 > This page assumes you know a *little* bit about chat apps in
 > general. Which you likely do if you ended up here. Welcome!
 
@@ -58,6 +58,10 @@ Matrix.
 
 To get started, you can [Download Sable](/installation) or use it on
 the web at <https://app.sable.moe>
+
+> [!TIP]
+> The desktop application will be slightly snappier than the webapp,
+> although both have the same functionality, for the most part.
 
 You can leave options at their default and just hit `Continue with
 Matrix.org` and create an account. Though, it should be stated that
@@ -129,7 +133,7 @@ and data about how long they've been operating at
 <https://servers.joinmatrix.org>
 
 > [!WARNING]
-> Do note: This page is *not* maintained by the Matrix.org 
+> Do note: The above page is *not* maintained by the Matrix.org 
 > Foundation, neither is it maintained by us.
 
 Alternatively, there is also <https://continuwuity.rocks>,
