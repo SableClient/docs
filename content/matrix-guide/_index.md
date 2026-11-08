@@ -141,3 +141,17 @@ Alternatively, there is also <https://continuwuity.rocks>,
 [Continuwuity](https://continuwuity.org) server software, which is
 frequently developed on by one of Sable's maintainers and has the best
 compatibility.
+
+### Fund your Homeserver!
+
+Just like a real-life city, a homeserver needs funds to survive. To
+pay for the hosting, the storage, the uptime, etc.
+
+Usually though, Homeservers are ran not-for-profit, so there won't be
+ads, 'premium plans' or anything of that kind. At least, generally
+speaking.
+
+Because of this, it's *really important* to help fund your homeserver!
+Head over to your homeserver's website and see if there's any donation
+options available, and consider setting up a small recurring donation
+:)
