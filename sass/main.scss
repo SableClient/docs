@@ -1470,3 +1470,8 @@ p {
   .theme-switch-moon { visibility: visible; }
 }
 
+:target {
+  max-width: fit-content;
+  background-color: hsla(40, 100%, 50%, 50%);
+  box-shadow: 0px 0px 0px 5px hsla(40, 100%, 50%, 50%);
+}
