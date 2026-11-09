@@ -29,7 +29,7 @@ hide_page_list = true
 [Google Play](https://play.google.com/store/apps/details?id=moe.sable.client) [IzzyOnDroid](https://apt.izzysoft.de/packages/moe.sable.client) [APK](https://git.sable.moe/SableClient/sable-next/releases/latest)
 {% </platform_card> %}
 {% <platform_card icon="device-mobile" title="iPhone or iPad"> %}
-[App Store](https://apps.apple.com/us/app/sable-chat/id6820482696) [TestFlight](https://testflight.apple.com/join/PT2DSC3f) [AltStore](https://intradeus.github.io/http-protocol-redirector?r=altstore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json) [SideStore](https://intradeus.github.io/http-protocol-redirector?r=sidestore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json)
+[App Store](https://apps.apple.com/us/app/sable-chat/id6820482696) [TestFlight](https://testflight.apple.com/join/PT2DSC3f) [AltStore PAL](https://intradeus.github.io/http-protocol-redirector?r=altstore-pal://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-pal-source.json) [AltStore](https://intradeus.github.io/http-protocol-redirector?r=altstore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json) [SideStore](https://intradeus.github.io/http-protocol-redirector?r=sidestore://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-source.json)
 {% </platform_card> %}
 {% </platform_grid> %}
 
@@ -127,6 +127,7 @@ install Sable from there.
 
 Sable is on the [App Store](https://apps.apple.com/us/app/sable-chat/id6820482696).
 To try new versions early, join the public beta on [Apple TestFlight](https://testflight.apple.com/join/PT2DSC3f).
+In the EU, [AltStore PAL](https://intradeus.github.io/http-protocol-redirector?r=altstore-pal://source?url=https://git.sable.moe/SableClient/sable-next/releases/download/latest/altstore-pal-source.json) installs the same build as the App Store.
 To sideload it instead, you need AltStore or SideStore and an Apple account. With a
 free Apple ID, refresh the app every seven days.
 

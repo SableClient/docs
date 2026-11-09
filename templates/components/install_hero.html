@@ -19,7 +19,7 @@
 {% endfor %}
 {% endif %}
 {% set android_apk_url = "https://git.sable.moe/SableClient/sable-next/releases/download/v" ~ version ~ "/sable-" ~ version ~ "-android-universal.apk" %}
-{% set ios_testflight_url = "https://testflight.apple.com/join/PT2DSC3f" %}
+{% set ios_app_store_url = "https://apps.apple.com/us/app/sable-chat/id6820482696" %}
 {% set playstore_url = "https://play.google.com/store/apps/details?id=moe.sable.client" %}
 {% set web_app_url = "https://app.sable.moe/" %}
 <script id="sable-release-data" type="application/json">
@@ -28,7 +28,7 @@
   "macos": { "url": "{{ mac_dmg_url }}" },
   "linux": { "url": "{{ linux_appimage_url }}" },
   "android": { "playstore": "{{ playstore_url }}", "apk": "{{ android_apk_url }}" },
-  "ios": { "url": "{{ ios_testflight_url }}" },
+  "ios": { "url": "{{ ios_app_store_url }}" },
   "web": { "url": "{{ web_app_url }}" }
 }
 </script>

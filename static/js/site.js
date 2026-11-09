@@ -217,7 +217,7 @@ const initInstallBanner = () => {
 			playstore: 'https://play.google.com/store/apps/details?id=moe.sable.client',
 			apk: 'https://git.sable.moe/SableClient/sable-next/releases/download/v2.3.0/sable-2.3.0-android-universal.apk',
 		},
-		ios: { url: 'https://testflight.apple.com/join/PT2DSC3f' },
+		ios: { url: 'https://apps.apple.com/us/app/sable-chat/id6820482696' },
 		web: { url: 'https://app.sable.moe/' },
 	};
 
@@ -277,11 +277,11 @@ const initInstallBanner = () => {
 			key: 'ios',
 			title: 'Download Sable',
 			btnIcon: 'arrow-right',
-			btnText: 'Join TestFlight Beta',
+			btnText: 'Get on the App Store',
 			url: releaseData.ios.url,
 			download: '',
 			external: true,
-			secondary: '',
+			secondary: 'or join the <a href="https://testflight.apple.com/join/PT2DSC3f">TestFlight beta</a>',
 		},
 		web: {
 			key: 'web',
