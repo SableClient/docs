@@ -140,7 +140,7 @@ Before you jump between stable, nightly, or another build, read the
 
 Want Sable on your own domain? Release archives include a web build you can
 extract into your own web root. See the
-[example Caddyfile](https://github.com/SableClient/sable-next/blob/main/Caddyfile)
+[example Caddyfile](https://github.com/SableClient/sable-next/blob/main/packaging/docker/Caddyfile)
 in the app repository.
 
 For custom names, logos, themes and login options, see
