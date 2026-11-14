@@ -3,17 +3,12 @@ title = "Presence"
 weight = 6
 +++
 
-Sable lets you control whether your online/away presence status is shared with other users.
+Presence is a feature that shows an online/away status to other users. Please note that **presence is a work-in-progress feature** in the Matrix ecosystem as a whole, and it's likely that you are not able to view most people's presence.
 
-# Enabling or Disabling Presence
+# Disabling presence
 
-Go to **Settings → General** and find the **Presence Status** toggle.
+Go to **Settings → Privacy → Activity** and find the **Online Status** toggle.
 
-- **On** (default): Your presence is shared with other users. They can see when you are online or away.
-- **Off**: Presence sharing is disabled. Other users will not receive updates about your online status.
+# Further explanation on the status of Presence
 
-The change takes effect immediately — no need to reconnect or restart the app.
-
-![Presence Status toggle in Settings](/img/presence-toggle.png)
-
-> **Note:** Presence requires sliding sync (MSC4186) to be active. On classic sync, this setting has no effect.
+See [ispresencefixedyet.com](https://ispresencefixedyet.com/). We have implemented MSC4495.
