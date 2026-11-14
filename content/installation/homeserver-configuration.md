@@ -27,6 +27,7 @@ do not include credentials or secrets.
 
 ```json
 {
+  "$schema": "https://app.sable.moe/well-known-sable.schema.json",
   "branding": {
     "appName": "Acme Chat",
     "logoUrl": "/branding/logo.svg",
@@ -48,6 +49,11 @@ The fields use the same format as the website's `config.json`. In this example,
 `/branding/logo.svg` points to `https://example.org/branding/logo.svg`. Theme
 files fetched from another domain also need CORS headers.
 
+The optional `$schema` line points to the
+[JSON schema](https://app.sable.moe/well-known-sable.schema.json) for this file.
+Editors that support JSON schemas use it to complete field names and flag
+invalid values.
+
 # Supported Options
 
 - `branding`: `appName`, `logoUrl`, `faviconUrl`, `themeUrl`.
@@ -55,9 +61,12 @@ files fetched from another domain also need CORS headers.
 - `auth`: `ssoRedirect`, `disableRegistration`, `logoutRedirectUrl`,
   `deviceDisplayName`.
 - `hideUsernamePasswordFields` and `hideCommunityLinks`.
-- `settingsDefaults` and `settingsLocked`, limited to `theme`,
-  `hideTypingIndicators`, `sendTypingNotifications`, `sendReadReceipts`,
-  `hideReadReceipts` and `urlPreviews`.
+- `settingsDefaults` and `settingsLocked`, which accept every setting in the
+  [settings reference](https://github.com/SableClient/sable-next/blob/main/docs/settings.md)
+  not marked deployment only.
+
+The [schema](https://app.sable.moe/well-known-sable.schema.json) lists every
+field and the values it accepts.
 
 Locking `sendReadReceipts` to `false` disables public receipts and hides receipt
 indicators and controls for that account. Removing the lock restores the user's
