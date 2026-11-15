@@ -12,7 +12,7 @@ hide_page_list = true
 
 {% <link_grid class="home-links"> %}
 {{<link_card href="/installation/" icon="download-simple" title="Install Sable" description="Web app or download for your device." class="home-card" />}}
-{{<link_card href="/features/" icon="book-open" title="Feature guides" description="Threads, notifications, personas, and more." class="home-card" />}}
+{{<link_card href="/features/" icon="book-open" title="Feature guides" description="Threads, notifications, PMPs, and more." class="home-card" />}}
 {{<link_card href="/matrix-guide/" icon="tree-structure" title="New to Matrix?" description="Accounts, servers, and rooms." class="home-card" />}}
 {% </link_grid> %}
 

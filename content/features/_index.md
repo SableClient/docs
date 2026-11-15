@@ -16,7 +16,7 @@ This section covers the features and improvements that have been added to Sable 
 - [Room Abbreviations](room-abbreviations) — Define glossary terms in a room or space that appear as tooltips when hovered.
 - [UI Improvements](ui-improvements) — A collection of quality-of-life improvements across the whole app.
 - [Presence](presence) — Control whether your online/away status is shared with others.
-- [Personas](personas) — Per-message profiles and PluralKit-style commands.
+- [Per-message profiles](pmp) — Per-message profiles and PluralKit compatability.
 - [Developer Tools](developer-tools) — Internal debug log viewer and in-app bug report command.
 - [Polls](polls) — Send and receive polls for deciding stuff in groups.
 - [Location sharing](location-sharing) — Share any location, or your location to your friends.
