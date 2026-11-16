@@ -14,6 +14,7 @@ This section covers the features and improvements that have been added to Sable 
 - [Privacy & Crash Reporting](privacy) — Opt-in crash reporting via Sentry with full data scrubbing, and a privacy settings section.
 - [Settings Sync](settings-sync) — Keep your settings in sync automatically across all your devices.
 - [Room Abbreviations](room-abbreviations) — Define glossary terms in a room or space that appear as tooltips when hovered.
+- [Rules](rules) — Display rules to room and space members.
 - [UI Improvements](ui-improvements) — A collection of quality-of-life improvements across the whole app.
 - [Presence](presence) — Control whether your online/away status is shared with others.
 - [Per-message profiles](pmp) — Per-message profiles and PluralKit compatability.

@@ -21,7 +21,7 @@ Don't forget to hit the save button before leaving the screen.
 <img class="light-only" src="/img/pmp/picker-closed-light.jpg" alt="Screenshot showing the profile picker button within the message composer, displaying an avatar" height="300" >
 <img class="dark-only" src="/img/pmp/picker-closed-dark.jpg" alt="Screenshot showing the profile picker button within the message composer, displaying an avatar" height="300" >
 
-The recommended way to use profiles is through the 'picker', which shows in your message composer once you add a profile to your account.
+The simplest way to use profiles is through the 'picker', which shows in your message composer once you add a profile to your account.
 
 <img class="light-only" src="/img/pmp/picker-open-light.jpg" alt="Screenshot showing the profile picker menu, displaying avatars in a grid" height="300" >
 <img class="dark-only" src="/img/pmp/picker-open-dark.jpg" alt="Screenshot showing the profile picker menu, displaying avatars in a grid" height="300" >
