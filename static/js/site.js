@@ -360,6 +360,23 @@ const initInstallBanner = () => {
 
 	applyPlatform(detectPlatform());
 
+	const manifests = {
+		windows: ['latest.yml', '.exe'],
+		macos: ['latest-mac.yml', '.dmg'],
+		linux: ['latest-linux.yml', '.AppImage'],
+	};
+	Promise.allSettled(
+		Object.entries(manifests).map(async ([key, [name, ext]]) => {
+			const res = await fetch(`https://git.sable.moe/SableClient/sable-next/releases/download/latest/${name}`);
+			if (!res.ok) return;
+			const urls = [...(await res.text()).matchAll(/^\s*(?:- )?url: (\S+)$/gm)].map((m) => m[1]);
+			const url = urls.find((u) => u.endsWith(ext));
+			if (!url) return;
+			configs[key].url = url;
+			configs[key].download = filename(url);
+		}),
+	).then(() => applyPlatform(hero.dataset.platform));
+
 	const disclosure = document.getElementById('other-platforms');
 	const expandLink = document.getElementById('install-more-link');
 
