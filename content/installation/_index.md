@@ -23,7 +23,7 @@ hide_page_list = true
 [Download](https://git.sable.moe/SableClient/sable-next/releases/latest) [Homebrew](#homebrew)
 {% </platform_card> %}
 {% <platform_card icon="linux-logo" title="Linux"> %}
-[Flathub](https://flathub.org/apps/moe.sable.client) [AUR](https://aur.archlinux.org/packages/sable-bin) [Nix, apt or dnf](#package-repositories)
+[Flathub](https://flathub.org/apps/moe.sable.client) [Arch Linux](https://archlinux.org/packages/extra/x86_64/sable/) [Nix, apt or dnf](#package-repositories)
 {% </platform_card> %}
 {% <platform_card icon="android-logo" title="Android"> %}
 [Google Play](https://play.google.com/store/apps/details?id=moe.sable.client) [IzzyOnDroid](https://apt.izzysoft.de/packages/moe.sable.client) [APK](https://git.sable.moe/SableClient/sable-next/releases/latest)
@@ -45,10 +45,10 @@ Nightly web versions are available at [dev.sable.moe](https://dev.sable.moe/) or
 Sable publishes its own packages, so your package manager keeps it up to date.
 
 ### Arch Linux
-Install `sable-bin` or `sable-nightly-bin` from the AUR with your preferred helper:
+Install `sable` from the official repositories, or `sable-nightly-bin` from the AUR:
 ```sh
 # Stable
-paru -S sable-bin
+sudo pacman -S sable
 # Nightly
 paru -S sable-nightly-bin
 ```
