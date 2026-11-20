@@ -19,7 +19,8 @@ and add the fields you need:
     "appName": "Acme Chat",
     "logoUrl": "/branding/logo.svg",
     "faviconUrl": "/branding/favicon.png",
-    "themeUrl": "/branding/acme.sable.css"
+    "themeUrl": "/branding/acme.sable.css",
+    "darkThemeUrl": "/branding/acme-dark.sable.css"
   },
   "links": {
     "help": "https://help.example.org",
@@ -58,12 +59,18 @@ indefinitely. The file is public, so do not put secrets in it.
 
 # Branding and Links
 
-`branding.appName` changes the name in the interface and page titles. About
-still credits Sable. The logo, favicon and theme can use a path on your website
-or an HTTP(S) URL. Themes use the same `.sable.css` format as imported themes.
-Users can still apply their own themes and CSS.
+`branding.appName` changes the name in the interface, page titles and
+notifications. About still credits Sable. The logo, favicon and themes can use a
+path on your website or an HTTP(S) URL. Themes use the same `.sable.css` format
+as imported themes, and users can still apply their own themes and CSS on top.
+The theme loads after startup, so the default theme can show briefly.
 
-Help, privacy and terms links appear in the login footer. The support room
+`themeUrl` applies to both light and dark mode. `lightThemeUrl` and
+`darkThemeUrl` replace it for one mode. A homeserver configuration that sets
+any of the three replaces all three.
+
+Help, privacy and terms links appear in the login footer. The privacy link also
+replaces the telemetry policy link and the `/privacy` page. The support room
 appears on the home page, and the bug report URL replaces the default issue
 tracker. Set `hideCommunityLinks` to `true` to hide Sable's community links,
 supporter awards and theme catalogue.
@@ -73,18 +80,20 @@ supporter awards and theme catalogue.
 - `auth.disableRegistration` hides account creation. Disable registration on
   the homeserver too if it must be enforced.
 - `auth.ssoRedirect` accepts `immediate` or `loginPage`. It starts SSO when the
-  server offers one SSO or OIDC provider and no password login; `loginPage`
-  limits this to the login screen. Browsers may block the popup.
+  server offers one SSO or OIDC provider and no password login. `immediate`
+  applies to every sign-in screen, `loginPage` only to the login screen.
+  Browsers may block the popup until the user allows popups for the site.
 - `hideUsernamePasswordFields` hides password login fields.
 - `auth.deviceDisplayName` names new sessions in device lists. It defaults to
   the application name.
 - `auth.logoutRedirectUrl` opens after the last account signs out.
 - `settingsDefaults` supplies preferences until the user chooses a value.
-- `settingsLocked` sets preferences users cannot change. Removing a lock restores
-  their previous choice. These values are not synced between devices.
+- `settingsLocked` sets preferences users cannot change. They show as managed
+  by your organisation, and removing a lock restores the user's previous choice.
+  These values are not synced between devices.
 
-For the available preference names and values, see
-[preferences.svelte.ts](https://github.com/SableClient/sable-next/blob/main/src/lib/settings/preferences.svelte.ts).
+For the available preference names and values, see the
+[settings reference](https://git.sable.moe/SableClient/sable-next/src/branch/main/docs/settings.md).
 Settings locked by your website also apply when an account loads homeserver
 configuration.
 
@@ -95,5 +104,5 @@ and the relevant files in `icons/`. Browser theme colours and the iOS home scree
 name also use tags in `src/app.html`, which requires rebuilding the web client.
 Desktop and mobile app names and launcher icons require a custom build.
 
-See the [web hosting guide](/installation/self-hosting/)
+See the [web hosting guide](@/installation/self-hosting.md)
 for push, GIFs, calls and other configuration options.

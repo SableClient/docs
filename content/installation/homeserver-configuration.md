@@ -56,13 +56,14 @@ invalid values.
 
 # Supported Options
 
-- `branding`: `appName`, `logoUrl`, `faviconUrl`, `themeUrl`.
+- `branding`: `appName`, `logoUrl`, `faviconUrl`, `themeUrl`, `lightThemeUrl`,
+  `darkThemeUrl`.
 - `links`: `help`, `privacy`, `terms`, `supportRoom`, `bugReport`.
 - `auth`: `ssoRedirect`, `disableRegistration`, `logoutRedirectUrl`,
   `deviceDisplayName`.
 - `hideUsernamePasswordFields` and `hideCommunityLinks`.
 - `settingsDefaults` and `settingsLocked`, which accept every setting in the
-  [settings reference](https://github.com/SableClient/sable-next/blob/main/docs/settings.md)
+  [settings reference](https://git.sable.moe/SableClient/sable-next/src/branch/main/docs/settings.md)
   not marked deployment only.
 
 The [schema](https://app.sable.moe/well-known-sable.schema.json) lists every

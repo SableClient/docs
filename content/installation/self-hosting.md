@@ -55,7 +55,9 @@ The web image does not translate environment variables into client settings.
 The configuration is public to browsers, so do not put secrets in it. Reload
 the page after changing it.
 
-This example shows the supported fields. Omit the ones you do not need.
+This example shows the supported fields. Omit the ones you do not need. The
+image serves [`config.schema.json`](https://app.sable.moe/config.schema.json)
+next to `config.json`, so editors that validate JSON can check the file.
 
 ```json
 {
@@ -113,27 +115,45 @@ This example shows the supported fields. Omit the ones you do not need.
   to an empty list.
 - `pushNotificationDetails` requires all three of `pushNotifyUrl`,
   `vapidPublicKey` and `webPushAppID`. Without them, the push configuration is
-  ignored. The other fields are optional and configure native or UnifiedPush
-  clients. See the [Sygnal guide](https://git.sable.moe/SableClient/sable-next/src/branch/main/docs/sygnal-setup.md).
+  ignored. `pushNotifyUrl` must be a gateway that delivers web push, such as
+  Sygnal with a `webpush` app. A UnifiedPush gateway like ntfy's rejects browser
+  pushers, and the homeserver then deletes them. The other fields are optional
+  and configure native or UnifiedPush clients. See the [Sygnal guide](https://git.sable.moe/SableClient/sable-next/src/branch/main/docs/sygnal-setup.md).
 - `embeds.serviceUrl` enables the embed service when it is an HTTP(S) URL.
 - `supporterAwards` requires an HTTP(S) service URL and at least one 43-character
   unpadded base64 or base64url Ed25519 public key, indexed by key ID.
 - `gifs.provider` accepts `klipy`, `tenor` or `giphy`, defaulting to `tenor`.
   GIF search also needs `proxyUrl` (a Matrix server name, without a scheme) and
-  the API key for the selected provider.
+  the API key for the selected provider. Homeservers fetch picked GIFs from the
+  proxy over federation. With the `reuploadGifs` setting, GIFs are uploaded to
+  the user's homeserver instead, and `proxyUrl` is optional.
 - `calls.livekitServiceUrl` provides a fallback LiveKit service URL.
 - `searchSharing.stunServers` lists the STUN servers used to share search history between
   devices. It defaults to `stun:stun.sable.moe:3478`. An empty list keeps transfers on the
   local network.
 - `disableAccountSwitcher` and `hideUsernamePasswordFields` default to `false`.
 - `settingsDefaults` sets initial client preferences. Existing user choices take
-  precedence. The example shows three settings; all accepted preference names,
-  defaults, value sets and numeric ranges are defined in
-  [preferences.svelte.ts](https://git.sable.moe/SableClient/sable-next/src/branch/main/src/lib/settings/preferences.svelte.ts). Invalid
-  values are ignored or, for numeric ranges, clamped.
+  precedence. The
+  [settings reference](https://git.sable.moe/SableClient/sable-next/src/branch/main/docs/settings.md)
+  lists every accepted name, value and default. Invalid values are ignored or, for numeric ranges, clamped.
 
 The shipped `config.json` includes Sable's service endpoints. Remove or replace
 them if you do not intend to use them.
+
+# Without Docker
+
+Serve the `dist` directory of a build, including `config.json`. Configure the
+web server to fall back to `index.html` for client routes, and don't cache
+`config.json` or `index.html` indefinitely.
+
+# Encryption defaults
+
+Encryption policy comes from the homeserver, not from `config.json`. Sable reads
+the `io.element.e2ee` block of `/.well-known/matrix/client`, as Element does.
+`"default": false` makes new rooms and direct chats unencrypted by default, and
+`"force_disable": true` creates them unencrypted and removes the option to
+encrypt them. The older `im.vector.riot.e2ee` block is read when
+`io.element.e2ee` is absent.
 
 # Further configuration
 
