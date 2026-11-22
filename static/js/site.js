@@ -211,7 +211,10 @@ const initInstallBanner = () => {
 	let releaseData = {
 		version: '2.3.0',
 		windows: { url: 'https://git.sable.moe/SableClient/sable-next/releases/download/v2.3.0/sable-2.3.0-x64.exe' },
-		macos: { url: 'https://git.sable.moe/SableClient/sable-next/releases/download/v2.3.0/sable-2.3.0-arm64.dmg' },
+		macos: {
+			url: 'https://git.sable.moe/SableClient/sable-next/releases/download/v2.3.0/sable-2.3.0-arm64.dmg',
+			intel: 'https://git.sable.moe/SableClient/sable-next/releases/download/v2.3.0/sable-2.3.0-x64.dmg',
+		},
 		linux: { url: 'https://git.sable.moe/SableClient/sable-next/releases/download/v2.3.0/sable-2.3.0-x86_64.AppImage' },
 		android: {
 			playstore: 'https://play.google.com/store/apps/details?id=moe.sable.client',
@@ -232,6 +235,7 @@ const initInstallBanner = () => {
 	}
 
 	const filename = (url) => url.split('/').pop().split('#')[0].split('?')[0];
+	const intelLink = (url) => `or <a href="${url}" download="${filename(url)}">download for Intel Macs</a>`;
 	const configs = {
 		windows: {
 			key: 'windows',
@@ -251,7 +255,7 @@ const initInstallBanner = () => {
 			url: releaseData.macos.url,
 			download: filename(releaseData.macos.url),
 			external: false,
-			secondary: '',
+			secondary: intelLink(releaseData.macos.intel),
 		},
 		linux: {
 			key: 'linux',
@@ -260,6 +264,16 @@ const initInstallBanner = () => {
 			btnText: 'Download for Linux',
 			url: releaseData.linux.url,
 			download: filename(releaseData.linux.url),
+			external: false,
+			secondary: '',
+		},
+		freebsd: {
+			key: 'freebsd',
+			title: 'Download Sable',
+			btnIcon: 'arrow-right',
+			btnText: 'Install on FreeBSD',
+			url: '#freebsd',
+			download: '',
 			external: false,
 			secondary: '',
 		},
@@ -312,6 +326,9 @@ const initInstallBanner = () => {
 		if (/android/.test(ua) || uaData === 'android' || /android/.test(plat)) {
 			return 'android';
 		}
+		if (/freebsd/.test(ua) || /freebsd/.test(plat)) {
+			return 'freebsd';
+		}
 		if (/linux|x11/.test(ua) || /linux|x11/.test(plat) || /linux/.test(oscpu) || uaData === 'linux') {
 			return 'linux';
 		}
@@ -362,7 +379,7 @@ const initInstallBanner = () => {
 
 	const manifests = {
 		windows: ['latest.yml', '.exe'],
-		macos: ['latest-mac.yml', '.dmg'],
+		macos: ['latest-mac.yml', '-arm64.dmg'],
 		linux: ['latest-linux.yml', '.AppImage'],
 	};
 	Promise.allSettled(
@@ -374,6 +391,8 @@ const initInstallBanner = () => {
 			if (!url) return;
 			configs[key].url = url;
 			configs[key].download = filename(url);
+			const intel = key === 'macos' && urls.find((u) => u.endsWith('-x64.dmg'));
+			if (intel) configs.macos.secondary = intelLink(intel);
 		}),
 	).then(() => applyPlatform(hero.dataset.platform));
 

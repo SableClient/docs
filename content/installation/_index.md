@@ -20,10 +20,13 @@ hide_page_list = true
 [Download](https://git.sable.moe/SableClient/sable-next/releases/latest)
 {% </platform_card> %}
 {% <platform_card icon="apple-logo" title="macOS"> %}
-[Download](https://git.sable.moe/SableClient/sable-next/releases/latest) [Homebrew](#homebrew)
+[Apple Silicon or Intel](https://git.sable.moe/SableClient/sable-next/releases/latest) [Homebrew](#homebrew)
 {% </platform_card> %}
 {% <platform_card icon="linux-logo" title="Linux"> %}
 [Flathub](https://flathub.org/apps/moe.sable.client) [Arch Linux](https://archlinux.org/packages/extra/x86_64/sable/) [Nix, apt or dnf](#package-repositories)
+{% </platform_card> %}
+{% <platform_card icon="terminal-window" title="FreeBSD"> %}
+[Download](https://git.sable.moe/SableClient/sable-next/releases/latest) [Instructions](#freebsd)
 {% </platform_card> %}
 {% <platform_card icon="android-logo" title="Android"> %}
 [Google Play](https://play.google.com/store/apps/details?id=moe.sable.client) [IzzyOnDroid](https://apt.izzysoft.de/packages/moe.sable.client) [APK](https://git.sable.moe/SableClient/sable-next/releases/latest)
@@ -83,6 +86,16 @@ sudo dnf install sable
 # Nightly
 sudo dnf config-manager addrepo --from-repofile=https://git.sable.moe/api/packages/SableClient/rpm/nightly.repo
 sudo dnf install sable-nightly
+```
+
+### FreeBSD
+
+Stable releases include `sable-<version>-freebsd-x64.tar.gz`, which runs on the system Electron.
+It does not update itself, and screen sharing cannot capture a single app's audio.
+```sh
+sudo pkg install electron45
+tar -xzf sable-<version>-freebsd-x64.tar.gz
+./sable-<version>/sable
 ```
 
 ### Homebrew

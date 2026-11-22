@@ -7,9 +7,11 @@
 {% set win_exe_url = "https://git.sable.moe/SableClient/sable-next/releases/download/v" ~ version ~ "/sable-" ~ version ~ "-x64.exe" %}
 {% if win_manifest and win_manifest.path %}{% set win_exe_url = win_manifest.path %}{% endif %}
 {% set mac_dmg_url = "https://git.sable.moe/SableClient/sable-next/releases/download/v" ~ version ~ "/sable-" ~ version ~ "-arm64.dmg" %}
+{% set mac_intel_dmg_url = "https://git.sable.moe/SableClient/sable-next/releases/download/v" ~ version ~ "/sable-" ~ version ~ "-x64.dmg" %}
 {% if mac_manifest and mac_manifest.files %}
 {% for file in mac_manifest.files %}
-{% if ".dmg" in file.url %}{% set_global mac_dmg_url = file.url %}{% endif %}
+{% if "-arm64.dmg" in file.url %}{% set_global mac_dmg_url = file.url %}{% endif %}
+{% if "-x64.dmg" in file.url %}{% set_global mac_intel_dmg_url = file.url %}{% endif %}
 {% endfor %}
 {% endif %}
 {% set linux_appimage_url = "https://git.sable.moe/SableClient/sable-next/releases/download/v" ~ version ~ "/sable-" ~ version ~ "-x86_64.AppImage" %}
@@ -25,7 +27,7 @@
 <script id="sable-release-data" type="application/json">
 {
   "windows": { "url": "{{ win_exe_url }}" },
-  "macos": { "url": "{{ mac_dmg_url }}" },
+  "macos": { "url": "{{ mac_dmg_url }}", "intel": "{{ mac_intel_dmg_url }}" },
   "linux": { "url": "{{ linux_appimage_url }}" },
   "android": { "playstore": "{{ playstore_url }}", "apk": "{{ android_apk_url }}" },
   "ios": { "url": "{{ ios_app_store_url }}" },
